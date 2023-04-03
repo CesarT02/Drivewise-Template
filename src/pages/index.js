@@ -5,7 +5,7 @@ export function Head() {
     return (
         <>
             <title>Home | DriveWise</title>
-            <meta name="description" content="Justin Johnson is a web developer in Tucson, Arizona."/>
+            <meta name="description" content="Group 8 Project"/>
             <link rel="canonical" href="Www.drivewise.site"/>
         </>
     )
