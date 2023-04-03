@@ -1,12 +1,12 @@
 import React from 'react'
 import Layout from '../components/Layout/Layout'
-import photo from '../images/about-photo.jpeg'
+
 
 export function Head() {
     return (
         <>
-            <title>About Me | Justin Johnson</title>
-            <meta name="description" content="Justin Johnson is a web developer in Tucson, Arizona. Here is some information about Justin."/>
+            <title>About Me | C</title>
+            <meta name="description" content=" is a web developer in Tucson, Arizona. Here is some information about ."/>
             <link rel="canonical" href="https://www.drivewise.site/about"/>
         </>
     )
