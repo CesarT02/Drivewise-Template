@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Custom font for name logo...
+ * if interested more info can be found at
+ * https://youssef-habchi.com/fonts/road-rage
+ */
+@font-face {
+    font-family: 'RoadRage';
+    src: url('../fonts/Road_Rage.otf');
+}
+/* 
+ * Custom font for navigation link and
+ * footer.
+ *
+ */
+@font-face {
+    font-family: 'VCR_OSD_MONO';
+    src: url('../fonts/VCR_OSD_MONO.ttf');
+}
