@@ -16,7 +16,10 @@ export default function AboutPage() {
     return (
         <Layout>
             <article class="space-y-4">
-                <img src={ photo } width="148" height="148" alt="Justin Johnson" class="mx-auto border border-cyan-600 rounded-xl"/>
+                <div class = "mx-auto felx flex-row">
+                    <img src={ photo } width="148" height="148" alt="Justin Johnson" class="mx-auto border border-cyan-600 rounded-xl"/>
+                    <img src={ photo } width="148" height="148" alt="Justin Johnson" class="mx-auto border border-cyan-600 rounded-xl"/>
+                </div>
                 <h2 class="text-xl font-bold underline">About Me</h2>
                 <p>
                     I grew up in the suburbs adjacent to the tech centers of Bellevue and Redmond. Having a family
@@ -25,19 +28,7 @@ export default function AboutPage() {
                     intermittent success putting them back together). After the impactful 2010 release of Tron: Legacy, it
                     was pretty much set that computers would become my career path.
                 </p>
-                <p>
-                    Throughout much of middle school and highschool, programming, scripting and gaming constituted for much
-                    of my time. I remember my friends and I making many strange projects using breadboards and microcontrollers,
-                    when we weren't playing either Counter Strike or Halo. For the latter part of highschool I attended Summer
-                    and Fall workshops at DigiPen institute covering things like web development, cyber-security, AI and robotics,
-                    and even sound engineering. 
-                </p>
-                <p>
-                    After highschool, I attended Bellevue College where I learned perseverance, ultimately earning my Associates in Science
-                    amidst the height of the Coronavirus Pandemic. After graduation, I quickly moved to Tucson, Arizona to further my 
-                    education, currently working on a Bachelors in Computer Science at the University of Arizona. When not in classes, 
-                    I serve as a web developer for the university's bookstore and student union.
-                </p>
+               
             </article>
         </Layout>
     )
