@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../components/Layout/Layout'
-import photo from '../images/about-photo.jpeg'
 
 export function Head() {
     return (
@@ -16,7 +15,7 @@ export default function AboutPage() {
     return (
         <Layout>
             <article class="space-y-4">
-                <img src={ photo } width="148" height="148" alt="Justin Johnson" class="mx-auto border border-cyan-600 rounded-xl"/>
+                
                 <h2 class="text-xl font-bold underline">About Me</h2>
                 <p>
                     I grew up in the suburbs adjacent to the tech centers of Bellevue and Redmond. Having a family
