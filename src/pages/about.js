@@ -5,7 +5,7 @@ import photo from '../images/about-photo.png'
 export function Head() {
     return (
         <>
-            <title>About Drivewise | C</title>
+            <title>About Drivewise | </title>
             <meta name="description" content=" Group 8 ."/>
             <link rel="canonical" href="https://www.drivewise.site/about"/>
         </>
