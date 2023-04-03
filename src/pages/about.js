@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout/Layout'
-
+import photo from '../images/about-photo.jpeg'
 
 export function Head() {
     return (
