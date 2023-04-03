@@ -11,7 +11,7 @@ export function Head() {
     )
 }
 
-export default function ProjectsPage() {
+export default function Research() {
     return (
         <Layout>
             <article class="space-y-2">
