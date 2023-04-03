@@ -14,6 +14,6 @@ export default function Footer() {
                 </a>
             </div>
             <p className="text-sm py-2 px-2 font-vcr">&copy; { new Date().getFullYear() } by Group 8</p>
-        </footer>
+        </footer
     )
 }
