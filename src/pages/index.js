@@ -16,7 +16,7 @@ export default function IndexPage() {
         <Layout>
               <article>
                 <h2 class="px-2 text-xl md:text-2xl lg:text-3xl font-bold text-yellow-400">
-                    % echo "Welcome to Drivewise!"&nbsp;
+                     "Welcome to Drivewise!"&nbsp;
                     <span class="animate-pulse">&#x2588;</span>
                 </h2>
                 <div class="w-full mt-8 mb-8 mx-auto border border-b-0 border-pink-600"></div>
