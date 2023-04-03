@@ -5,7 +5,7 @@ import photo from '../images/about-photo.jpeg'
 export function Head() {
     return (
         <>
-            <title>About Me | Justin Johnson</title>
+            <title>About Me | </title>
             <meta name="description" content="Justin Johnson is a web developer in Tucson, Arizona. Here is some information about Justin."/>
             <link rel="canonical" href="https://www.drivewise.site/about"/>
         </>
