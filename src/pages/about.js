@@ -5,8 +5,8 @@ import photo from '../images/about-photo.png'
 export function Head() {
     return (
         <>
-            <title>About Me | C</title>
-            <meta name="description" content=" is a web developer in Tucson, Arizona. Here is some information about ."/>
+            <title>About Drivewise | C</title>
+            <meta name="description" content=" Group 8 ."/>
             <link rel="canonical" href="https://www.drivewise.site/about"/>
         </>
     )
