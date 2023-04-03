@@ -12,7 +12,7 @@ export default function Logo() {
                 color: '#facc15'
             }}
             >
-            Justin Johnson
+            Group 8
         </Link>
     </h1>
     )
