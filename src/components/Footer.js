@@ -1,5 +1,5 @@
 import React from 'react'
-import {FaGithub, FaInstagram, FaLinkedinIn, FaTwitter} from 'react-icons/fa'
+
 
 export default function Footer() {
     return (
