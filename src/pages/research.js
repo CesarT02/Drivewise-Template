@@ -4,7 +4,7 @@ import Layout from '../components/Layout/Layout'
 export function Head() {
     return (
         <>
-            <title>Projects | Justin Johnson</title>
+            <title>Projects | Group 8</title>
             <meta name="description" content="Group 8"/>
             <link rel="canonical" href="https://www.drivewise.site/Research"/>
         </>
