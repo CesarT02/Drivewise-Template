@@ -15,8 +15,8 @@ export default function MapPage() {
     return (
         <Layout>
             <div>    
-                <iframe style="width: 100%; height: 100%;" src="map-raw.html" title="description"></iframe>
-           </div>
+                <iframe style={{ width: '100%', height: '100%' }} src="map-raw" title="description"></iframe>
+            </div>
         </Layout>
     )
 }
