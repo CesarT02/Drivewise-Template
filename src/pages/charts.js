@@ -11,7 +11,7 @@ export function Head() {
     )
 }
 
-export default function Charts() {
+export default function ChartsPage() {
     return (
         <Layout>
             <article class="space-y-2">
