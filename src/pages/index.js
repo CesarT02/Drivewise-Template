@@ -29,7 +29,7 @@ export default function IndexPage() {
                                                    Our ultimate goal is to help reduce the number of car accidents by providing suggestions and warnings if a certain condition like the time of day and or where weather conditions lines up to multiple accidents. This would be more informational with some usable functionality for the everyday user as well.
 
 
-                                                   With DriveWise, you can make more informed decisions when traveling and potentially avoid dangerous situations. Enter your location or a selected location to see the data near you and stay safe on the road.
+                                                   With DriveWise, you can make more informed decisions when traveling and potentially avoid dangerous situations.
                 </p>
               </article>
         </Layout>
