@@ -11,7 +11,7 @@ export function Head() {
     )
 }
 
-export default function Map() {
+export default function MapPage() {
     return (
         <Layout>
             <div>    
