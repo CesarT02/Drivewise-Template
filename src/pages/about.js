@@ -22,11 +22,7 @@ export default function AboutPage() {
                 </div>
                 <h2 class="text-xl font-bold underline">About Me</h2>
                 <p>
-                    I grew up in the suburbs adjacent to the tech centers of Bellevue and Redmond. Having a family
-                    history of taking interest in computers, it was natural that I too would as well. From a young
-                    age, probably elementary school I began taking apart computers or various electronics (with
-                    intermittent success putting them back together). After the impactful 2010 release of Tron: Legacy, it
-                    was pretty much set that computers would become my career path.
+                    Drivewise.
                 </p>
                
             </article>
