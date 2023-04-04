@@ -13,29 +13,11 @@ export function Head() {
 
 export default function ResearchPage() {
     return (
-        <Layout>
+     <Layout>
             <article class="space-y-2">
-                <h2></h2>
-                <p>:</p>
-                <h3> </h3>
-                <ul class="list-disc pl-8">
-                    <li class="text-cyan-600">
-                        <span class="text-slate-200">
-                            <a 
-                        </span>
-                    </li>
-                    <li class="text-cyan-600">
-                        <span class="text-slate-200">
-                            <a 
-                        </span>
-                    </li>
-                    <li class="text-cyan-600">
-                        <span class="text-slate-200">
-                            <a 
-                        </span>
-                    </li>
-                </ul>
+                <h2 class="text-xl font-bold underline">Projects</h2>
+                <p>Research goes here:</p>
             </article>
-        </Layout>
+    </Layout>
     )
 }
