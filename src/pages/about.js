@@ -20,7 +20,7 @@ export default function AboutPage() {
                     <img src={ photo } width="148" height="148" alt="Justin Johnson" class="mx-auto border border-cyan-600 rounded-xl"/>
                     <img src={ photo } width="148" height="148" alt="Justin Johnson" class="mx-auto border border-cyan-600 rounded-xl"/>
                 </div>
-                <h2 class="text-xl font-bold underline">About Me</h2>
+                <h2 class="text-xl font-bold underline">About Drivewise</h2>
                 <p>
                     Drivewise.
                 </p>
