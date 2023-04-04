@@ -11,7 +11,7 @@ export function Head() {
     )
 }
 
-export default function Bibliography() {
+export default function BibliographyPage() {
     return (
         <Layout>
             <article class="space-y-2">
