@@ -6,7 +6,7 @@ export function Head() {
         <>
             <title>Home | DriveWise</title>
             <meta name="description" content="Group 8 Project"/>
-            <link rel="canonical" href="Www.drivewise.site"/>
+            <link rel="canonical" href="www.drivewise.site"/>
         </>
     )
 }
