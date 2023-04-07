@@ -1,19 +1,15 @@
-import React from 'react'
-import Layout from '../components/Layout/Layout'
+import React from 'react';
+import Layout from '../components/Layout/Layout';
+import GoogleMap from './GoogleMap';
 
 export function Head() {
-    return (
-        <>
-            <title>Map | Group 8</title>
-            <meta name="description" content="Group 8"/>
-            <link rel="canonical" href="www.drivewise.site/map"/>
-        </>
-    )
+  // ...
 }
 
 export default function MapPage() {
-    return (
-        <Layout>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <GoogleMap />
+    </Layout>
+  );
 }
