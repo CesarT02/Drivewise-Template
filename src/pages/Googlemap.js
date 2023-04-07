@@ -17,7 +17,7 @@ const GoogleMap = () => {
     };
 
     const loader = new Loader({
-      apiKey: '', // Replace with your actual Google Maps API key
+      apiKey: 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8', // Replace with your actual Google Maps API key
       version: 'weekly',
     });
 
