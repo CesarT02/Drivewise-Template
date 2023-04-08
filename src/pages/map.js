@@ -11,7 +11,7 @@ const mapContainerStyle = {
 
 const center = {
   lat: 32.2319,
-  lng: 110.9501,
+  lng: -110.9501,
 };
 
 export function Head() {
