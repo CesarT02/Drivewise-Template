@@ -14,7 +14,7 @@ export function Head() {
 export default function MapPage() {
   const mapRef = useRef();
   const [map, setMap] = useState(null);
-  let heatmap;
+  const [heatmap, setHeatmap] = useState(null);
 
   useEffect(() => {
     const loader = new Loader({
@@ -32,10 +32,12 @@ export default function MapPage() {
 
       setMap(newMap);
 
-      heatmap = new google.maps.visualization.HeatmapLayer({
+      const newHeatmap = new google.maps.visualization.HeatmapLayer({
         data: getPoints(),
         map: newMap,
       });
+
+      setHeatmap(newHeatmap);
     });
   }, []);
 
@@ -70,3 +72,4 @@ export default function MapPage() {
     </Layout>
   );
 }
+
