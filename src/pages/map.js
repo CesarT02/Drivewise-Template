@@ -1,17 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Layout from '../components/Layout/Layout';
-import { GoogleMap, HeatmapLayer, useLoadScript } from '@react-google-maps/api';
-
-const libraries = ['visualization'];
+import { Loader } from '@googlemaps/js-api-loader';
 
 const mapContainerStyle = {
   width: '100%',
   height: '100vh',
-};
-
-const center = {
-  lat: 32.2319,
-  lng: -110.9501,
 };
 
 export function Head() {
@@ -19,40 +12,85 @@ export function Head() {
 }
 
 export default function MapPage() {
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8', // Replace with your API key
-    libraries,
-  });
+  const mapRef = useRef();
+  let heatmap;
 
-  if (loadError) return 'Error loading maps';
-  if (!isLoaded) return 'Loading maps';
+  useEffect(() => {
+    const loader = new Loader({
+      apiKey: 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8', // Replace with your API key
+      version: 'weekly',
+      libraries: ['visualization'],
+    });
 
-  const heatmapData = [
-    { lat:32.236103, lng: -110.944093 },
-     { lat:32.236103, lng: -110.944093 },
-     { lat:32.236103, lng: -110.944093 },
-     { lat:32.236103, lng: -110.944093 },
-     { lat:32.236103, lng: -110.944093 },
-     { lat:32.236103, lng: -110.944093 },
-     { lat:32.236103, lng: -110.944093 },
-  ];
+    loader.load().then(() => {
+      const map = new google.maps.Map(mapRef.current, {
+        zoom: 13,
+        center: { lat: 37.775, lng: -122.434 },
+        mapTypeId: 'satellite',
+      });
 
- return (
-  <Layout>
-    <GoogleMap
-      id="map"
-      mapContainerStyle={mapContainerStyle}
-      zoom={13}
-      center={center}
-      options={{ mapTypeId: 'satellite' }}
-    >
-      <HeatmapLayer
-        data={heatmapData}
-        options={{
-          radius: 50, // Adjust the radius as needed
-          opacity: 0.8, // Adjust the opacity as needed
-        }}
-      />
-    </GoogleMap>
-  </Layout>
-);
+      heatmap = new google.maps.visualization.HeatmapLayer({
+        data: getPoints(),
+        map: map,
+      });
+    });
+  }, []);
+
+  function toggleHeatmap() {
+    heatmap.setMap(heatmap.getMap() ? null : map);
+  }
+
+  function changeGradient() {
+    const gradient = [
+      "rgba(0, 255, 255, 0)",
+      "rgba(0, 255, 255, 1)",
+      "rgba(0, 191, 255, 1)",
+      "rgba(0, 127, 255, 1)",
+      "rgba(0, 63, 255, 1)",
+      "rgba(0, 0, 255, 1)",
+      "rgba(0, 0, 223, 1)",
+      "rgba(0, 0, 191, 1)",
+      "rgba(0, 0, 159, 1)",
+      "rgba(0, 0, 127, 1)",
+      "rgba(63, 0, 91, 1)",
+      "rgba(127, 0, 63, 1)",
+      "rgba(191, 0, 31, 1)",
+      "rgba(255, 0, 0, 1)",
+    ];
+
+    heatmap.set("gradient", heatmap.get("gradient") ? null : gradient);
+  }
+
+  function changeRadius() {
+    heatmap.set("radius", heatmap.get("radius") ? null : 20);
+  }
+
+  function changeOpacity() {
+    heatmap.set("opacity", heatmap.get("opacity") ? null : 0.2);
+  }
+
+  function getPoints() {
+    return [
+      new google.maps.LatLng(37.782551, -122.445368),
+      new google.maps.LatLng(37.782745, -122.444586),
+    ];
+  }
+
+  return (
+    <Layout>
+      <button id="toggle-heatmap" onClick={toggleHeatmap}>
+        Toggle Heatmap
+      </button>
+      <button id="change-gradient" onClick={changeGradient}>
+        Change Gradient
+      </button>
+      <button id="change-opacity" onClick={changeOpacity}>
+        Change Opacity
+      </button>
+      <button id="change-radius" onClick={changeRadius}>
+        Change Radius
+      </button>
+      <div ref={mapRef} style={mapContainerStyle} />
+    </Layout>
+  );
+}
