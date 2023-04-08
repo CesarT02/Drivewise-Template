@@ -29,25 +29,30 @@ export default function MapPage() {
 
   const heatmapData = [
     { lat:32.236103, lng: -110.944093 },
-    { lat: 37.782745, lng: -122.444586 },
-    { lat: 37.782842, lng: -122.443688 },
-    { lat: 37.782919, lng: -122.442815 },
-    { lat: 37.782992, lng: -122.442112 },
-    { lat: 37.7831, lng: -122.441461 },
-    { lat: 37.783206, lng: -122.440829 },
+     { lat:32.236103, lng: -110.944093 },
+     { lat:32.236103, lng: -110.944093 },
+     { lat:32.236103, lng: -110.944093 },
+     { lat:32.236103, lng: -110.944093 },
+     { lat:32.236103, lng: -110.944093 },
+     { lat:32.236103, lng: -110.944093 },
   ];
 
-  return (
-    <Layout>
-      <GoogleMap
-        id="map"
-        mapContainerStyle={mapContainerStyle}
-        zoom={13}
-        center={center}
-        options={{ mapTypeId: 'satellite' }}
-      >
-        <HeatmapLayer data={heatmapData} />
-      </GoogleMap>
-    </Layout>
-  );
-}
+ return (
+  <Layout>
+    <GoogleMap
+      id="map"
+      mapContainerStyle={mapContainerStyle}
+      zoom={13}
+      center={center}
+      options={{ mapTypeId: 'satellite' }}
+    >
+      <HeatmapLayer
+        data={heatmapData}
+        options={{
+          radius: 50, // Adjust the radius as needed
+          opacity: 0.8, // Adjust the opacity as needed
+        }}
+      />
+    </GoogleMap>
+  </Layout>
+);
