@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Layout from '../components/Layout/Layout';
-import { Loader } from '@googlemaps/js-api-loader';
 
 const mapContainerStyle = {
   width: '100%',
@@ -17,28 +16,30 @@ export default function MapPage() {
   const [heatmap, setHeatmap] = useState(null);
 
   useEffect(() => {
-    const loader = new Loader({
-      apiKey: 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8', // Replace with your API key
-      version: 'weekly',
-      libraries: ['visualization'],
-    });
-
-    loader.load().then(() => {
-      const newMap = new google.maps.Map(mapRef.current, {
-        zoom: 13,
-        center: { lat: 37.775, lng: -122.434 },
-        mapTypeId: 'satellite',
+    if (typeof window !== 'undefined') {
+      const loader = new window.google.maps.plugins.loader.Loader({
+        apiKey: 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8', // Replace with your API key
+        version: 'weekly',
+        libraries: ['visualization'],
       });
 
-      setMap(newMap);
+      loader.load().then(() => {
+        const newMap = new window.google.maps.Map(mapRef.current, {
+          zoom: 13,
+          center: { lat: 37.775, lng: -122.434 },
+          mapTypeId: 'satellite',
+        });
 
-      const newHeatmap = new google.maps.visualization.HeatmapLayer({
-        data: getPoints(),
-        map: newMap,
+        setMap(newMap);
+
+        const newHeatmap = new window.google.maps.visualization.HeatmapLayer({
+          data: getPoints(),
+          map: newMap,
+        });
+
+        setHeatmap(newHeatmap);
       });
-
-      setHeatmap(newHeatmap);
-    });
+    }
   }, []);
 
   function toggleHeatmap() {
