@@ -42,10 +42,12 @@ export default function MapPage() {
   }, []);
 
   function toggleHeatmap() {
-    heatmap.setMap(heatmap.getMap() ? null : map);
+    if (heatmap) {
+      heatmap.setMap(heatmap.getMap() ? null : map);
+    }
   }
 
-  // Other functions remain the same
+  // Other functions remain the same.
 
   function getPoints() {
     return [
@@ -72,3 +74,4 @@ export default function MapPage() {
     </Layout>
   );
 }
+
