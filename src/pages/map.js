@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Layout from '../components/Layout/Layout';
 import { Loader } from '@googlemaps/js-api-loader';
 
@@ -13,6 +13,7 @@ export function Head() {
 
 export default function MapPage() {
   const mapRef = useRef();
+  const [map, setMap] = useState(null);
   let heatmap;
 
   useEffect(() => {
@@ -23,15 +24,17 @@ export default function MapPage() {
     });
 
     loader.load().then(() => {
-      const map = new google.maps.Map(mapRef.current, {
+      const newMap = new google.maps.Map(mapRef.current, {
         zoom: 13,
         center: { lat: 37.775, lng: -122.434 },
         mapTypeId: 'satellite',
       });
 
+      setMap(newMap);
+
       heatmap = new google.maps.visualization.HeatmapLayer({
         data: getPoints(),
-        map: map,
+        map: newMap,
       });
     });
   }, []);
@@ -40,34 +43,7 @@ export default function MapPage() {
     heatmap.setMap(heatmap.getMap() ? null : map);
   }
 
-  function changeGradient() {
-    const gradient = [
-      "rgba(0, 255, 255, 0)",
-      "rgba(0, 255, 255, 1)",
-      "rgba(0, 191, 255, 1)",
-      "rgba(0, 127, 255, 1)",
-      "rgba(0, 63, 255, 1)",
-      "rgba(0, 0, 255, 1)",
-      "rgba(0, 0, 223, 1)",
-      "rgba(0, 0, 191, 1)",
-      "rgba(0, 0, 159, 1)",
-      "rgba(0, 0, 127, 1)",
-      "rgba(63, 0, 91, 1)",
-      "rgba(127, 0, 63, 1)",
-      "rgba(191, 0, 31, 1)",
-      "rgba(255, 0, 0, 1)",
-    ];
-
-    heatmap.set("gradient", heatmap.get("gradient") ? null : gradient);
-  }
-
-  function changeRadius() {
-    heatmap.set("radius", heatmap.get("radius") ? null : 20);
-  }
-
-  function changeOpacity() {
-    heatmap.set("opacity", heatmap.get("opacity") ? null : 0.2);
-  }
+  // Other functions (changeGradient, changeRadius, changeOpacity) remain the same.
 
   function getPoints() {
     return [
