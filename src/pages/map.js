@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Layout from '../components/Layout/Layout';
 import { Loader } from '@googlemaps/js-api-loader';
 
@@ -13,8 +13,8 @@ export function Head() {
 
 export default function MapPage() {
   const mapRef = useRef();
-  const [map, setMap] = useState(null);
-  const [heatmap, setHeatmap] = useState(null);
+  const mapInstance = useRef(null);
+  const heatmapInstance = useRef(null);
 
   useEffect(() => {
     const loader = new Loader({
@@ -30,24 +30,22 @@ export default function MapPage() {
         mapTypeId: 'satellite',
       });
 
-      setMap(newMap);
+      mapInstance.current = newMap;
 
       const newHeatmap = new google.maps.visualization.HeatmapLayer({
         data: getPoints(),
         map: newMap,
       });
 
-      setHeatmap(newHeatmap);
+      heatmapInstance.current = newHeatmap;
     });
   }, []);
 
   function toggleHeatmap() {
-    if (heatmap) {
-      heatmap.setMap(heatmap.getMap() ? null : map);
-    }
+    heatmapInstance.current.setMap(heatmapInstance.current.getMap() ? null : mapInstance.current);
   }
 
-  // Other functions remain the same.
+  // Other functions remain the same
 
   function getPoints() {
     return [
