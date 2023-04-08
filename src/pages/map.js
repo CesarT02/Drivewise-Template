@@ -28,7 +28,7 @@ export default function MapPage() {
   if (!isLoaded) return 'Loading maps';
 
   const heatmapData = [
-    { lat: 37.782551, lng: -122.445368 },
+    { lat:32.236103, lng: -110.944093 },
     { lat: 37.782745, lng: -122.444586 },
     { lat: 37.782842, lng: -122.443688 },
     { lat: 37.782919, lng: -122.442815 },
