@@ -16,7 +16,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${master}/src/data`,
+        path: `${__master}/src/data`,
       },
     },
     `gatsby-transformer-csv`,
