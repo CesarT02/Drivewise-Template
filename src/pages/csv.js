@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout/Layout';
 import DataGrid from 'react-data-grid';
-import CSVReader from 'react-csv-reader';
+import jsonData from '../data/data.json';
 
 export function Head() {
   return (
     <>
-      <title>CSV Page| Group 8</title>
+      <title>CSV Page | Group 8</title>
       <meta name="description" content="Group 8" />
       <link rel="canonical" href="www.drivewise.site/csv" />
     </>
@@ -17,11 +17,12 @@ export default function CSVPage() {
   const [columns, setColumns] = useState([]);
   const [rows, setRows] = useState([]);
 
-  const handleCSVData = (data) => {
+  useEffect(() => {
+    const data = jsonData;
     if (data.length === 0) return;
 
     // Generate columns from the header row
-    const headerRow = data[0];
+    const headerRow = Object.keys(data[0]);
     const newColumns = headerRow.map((header, idx) => ({
       key: idx.toString(),
       name: header,
@@ -30,33 +31,28 @@ export default function CSVPage() {
     }));
 
     // Generate rows from the data rows
-    const newRows = data.slice(1).map((row, idx) => {
+    const newRows = data.map((row, idx) => {
       const rowData = {};
-      row.forEach((cell, cellIdx) => {
-        rowData[cellIdx.toString()] = cell;
+      headerRow.forEach((header, cellIdx) => {
+        rowData[cellIdx.toString()] = row[header];
       });
       return { id: idx, ...rowData };
     });
 
     setColumns(newColumns);
     setRows(newRows);
-  };
+  }, []);
 
   return (
     <Layout>
       <article className="space-y-2">
-        <h2 className="text-xl font-bold underline">Bibliography</h2>
-        <p>Bibliography goes here:</p>
-        <CSVReader
-          cssClass="csv-reader-input"
-          onFileLoaded={handleCSVData}
-          onError={(error) => console.log('Error:', error)}
-          inputId="csvFileInput"
-          inputStyle={{ color: 'black' }}
-        />
-        <div className="mt-4">
-          <DataGrid columns={columns} rows={rows} />
-        </div>
+        <h2 className="text-xl font-bold underline">CSV Interaction</h2>
+        <p>Interact with the data:</p>
+        {rows.length > 0 && (
+          <div className="mt-4">
+            <DataGrid columns={columns} rows={rows} />
+          </div>
+        )}
       </article>
     </Layout>
   );
