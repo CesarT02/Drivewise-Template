@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `site`,
-    siteUrl: `https://www.drivewise.site/`,
+    siteUrl: `https://justinmjoh.com`,
   },
   plugins: [
     'gatsby-plugin-postcss',
@@ -11,16 +11,6 @@ module.exports = {
       options: {
         icon: 'src/images/icon.png'
       }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/src/data`,
-      },
-    },
-    `gatsby-transformer-csv`,
+    }
   ],
-};
-
-
+}
