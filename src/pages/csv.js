@@ -13,7 +13,7 @@ export function Head() {
   );
 }
 
-export default function BibliographyPage() {
+export default function CSVPage() {
   const [columns, setColumns] = useState([]);
   const [rows, setRows] = useState([]);
 
