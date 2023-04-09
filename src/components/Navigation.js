@@ -13,7 +13,6 @@ export default function Navigation() {
                     <StyledNavLink to="/charts/">Charts</StyledNavLink>
                     <StyledNavLink to="/research/">Research</StyledNavLink>
                     <StyledNavLink to="/bibliography/">Bibliography</StyledNavLink>
-                    <StyledNavLink to="/csv/">CSV</StyledNavLink>
                 </div>
             </div>
         </nav>

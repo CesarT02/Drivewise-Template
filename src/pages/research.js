@@ -17,7 +17,7 @@ export default function ResearchPage() {
       <article className="space-y-2">
         <h2 className="text-xl font-bold underline">Research</h2>
         <p className="text-justify">
-          This research aims to identify the most common causes of car accidents in Tucson, Arizona, and the specific roads on which they occur. By analyzing historical data, weather conditions, and other factors, we hope to provide valuable insights for drivers in the region. We also discuss the Drive Wise project, which aims to pull and provide data on which parts of Tucson have the most accidents.
+          This research aimed to identify the most common causes of car accidents in Tucson, Arizona, and the specific roads on which they occur. By analyzing historical data, weather conditions, and other factors, we hope to provide valuable insights for drivers in the region. We also discuss the Drive Wise project, which aims to pull and provide data on which parts of Tucson have the most accidents.
           <br /><br />
           Car accidents are a leading cause of injury and death in the United States, with millions of accidents occurring each year (NHTSA, 2020). In Tucson, Arizona, certain roads and intersections are known for having higher accident rates, and understanding these patterns can help drivers make informed decisions when traveling. In this paper, we analyze the most common causes of car accidents in Tucson and identify high-risk roads.
           <br /><br />

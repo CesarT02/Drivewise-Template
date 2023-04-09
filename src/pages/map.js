@@ -26,7 +26,7 @@ export default function MapPage() {
     loader.load().then(() => {
       const loadedMap = new google.maps.Map(mapRef.current, {
         zoom: 13,
-        center: { lat: 37.775, lng: -122.434 },
+        center: { lat: 32.248814, lng: -110.987419 },
         mapTypeId: 'satellite',
       });
 
@@ -75,8 +75,16 @@ export default function MapPage() {
 
   function getPoints() {
     return [
-      new google.maps.LatLng(37.782551, -122.445368),
-      new google.maps.LatLng(37.782745, -122.444586),
+      new google.maps.LatLng(32.236039, -110.944082),
+      new google.maps.LatLng(32.236039, -110.944082),
+      new google.maps.LatLng(32.236039, -110.944082),
+      new google.maps.LatLng(32.236039, -110.944082),
+      new google.maps.LatLng(32.250399, -110.961249),
+      new google.maps.LatLng(32.250399, -110.961249),
+      new google.maps.LatLng(32.250399, -110.961249),
+      new google.maps.LatLng(32.250399, -110.961249),
+      
+     
     ];
   }
 

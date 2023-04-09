@@ -6,6 +6,4 @@ export const VALID_NODE_NAMES = [
   `base`,
   `noscript`,
   `script`,
-  `html`,
-  `body`,
 ]
