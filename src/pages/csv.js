@@ -6,9 +6,9 @@ import CSVReader from 'react-csv-reader';
 export function Head() {
   return (
     <>
-      <title>Bibliography | Group 8</title>
+      <title>CSV Page| Group 8</title>
       <meta name="description" content="Group 8" />
-      <link rel="canonical" href="www.drivewise.site/bibliography" />
+      <link rel="canonical" href="www.drivewise.site/csv" />
     </>
   );
 }
