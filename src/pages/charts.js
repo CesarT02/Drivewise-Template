@@ -37,7 +37,7 @@ export default function ChartsPage() {
       </article>
       <style jsx>{`
         .bigger-image {
-          width: 120%;
+          width: 150%;
         }
       `}</style>
     </Layout>
