@@ -1,5 +1,8 @@
 import React from 'react';
 import Layout from '../components/Layout/Layout';
+import chart1 from '../images/chart1.png';
+import chart2 from '../images/chart-2.png';
+import chart3 from '../images/chart-3.png';
 
 export function Head() {
   return (
@@ -19,16 +22,10 @@ export default function ChartsPage() {
         <p>Charts go here:</p>
         <div className="flex flex-wrap justify-center">
           <div className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4">
-            <img src="../images/chart1.png" alt="First Image" className="w-full" />
+            <img src={chart1} alt="First Image" className="w-full" />
+            <img src={chart2} alt="Second Image" className="w-full" />
+            <img src={chart3} alt="Third Image" className="w-full" />
             <p className="text-center mt-2">Text under first image</p>
-          </div>
-          <div className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4">
-            <img src="../images/chart-2.png" alt="Second Image" className="w-full" />
-            <p className="text-center mt-2">Text under second image</p>
-          </div>
-          <div className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4">
-            <img src="../images/chart-3.png" alt="Third Image" className="w-full" />
-            <p className="text-center mt-2">Text under third image</p>
           </div>
         </div>
       </article>
