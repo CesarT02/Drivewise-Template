@@ -12,7 +12,7 @@ async function getLatLngFromStreetName(streetName,AIzaSyAuOhlWr5cxsZcvX6FSWA_mcE
   const response = await fetch(
     `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
       streetName
-    )}&key=${apiKey}`
+    )}&key=${AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8}`
   );
   const data = await response.json();
   if (data.status === 'OK' && data.results.length > 0) {
