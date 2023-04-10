@@ -54,7 +54,7 @@ export default function MapPage() {
       fetch('../components/cord-data/CSV_TIME.csv')
         .then((response) => response.text())
         .then(async (csvData) => {
-          const coordinates = await parseAndGeocodeCsv(csvData, apiKey);
+          const coordinates = await parseAndGeocodeCsv(csvData, AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8);
           const loadedHeatmap = new google.maps.visualization.HeatmapLayer({
             data: coordinates,
             map: loadedMap,
