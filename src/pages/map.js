@@ -51,7 +51,7 @@ export default function MapPage() {
         mapTypeId: 'satellite',
       });
 
-      fetch('../components/cord-data/CSV_TIME.csv')
+      fetch('/CSV_TIME.csv')
         .then((response) => response.text())
         .then(async (csvData) => {
           const coordinates = await parseAndGeocodeCsv(csvData, AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8);
