@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/Layout/Layout';
 import chart1 from '../images/chart1.png';
 import chart2 from '../images/chart-2.png';
@@ -15,39 +15,42 @@ export function Head() {
 }
 
 export default function ChartsPage() {
+  const [hoveredImage, setHoveredImage] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setHoveredImage(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredImage(null);
+  };
+
   return (
     <Layout>
       <article className="space-y-2">
         <h2 className="text-xl font-bold underline">Charts</h2>
         <p>Charts go here:</p>
         <div className="flex flex-wrap justify-center">
-          <div className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4">
-            <img
-              src={chart1}
-              alt="First Image"
-              className="w-full transition-transform duration-300 ease-in-out transform hover:scale-120"
-            />
-            <p className="text-center mt-2">Text under first image</p>
-          </div>
-          <div className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4">
-            <img
-              src={chart2}
-              alt="Second Image"
-              className="w-full transition-transform duration-300 ease-in-out transform hover:scale-120"
-            />
-            <p className="text-center mt-2">Text under second image</p>
-          </div>
-          <div className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4">
-            <img
-              src={chart3}
-              alt="Third Image"
-              className="w-full transition-transform duration-300 ease-in-out transform hover:scale-120"
-            />
-            <p className="text-center mt-2">Text under third image</p>
-          </div>
+          {[chart1, chart2, chart3].map((image, index) => (
+            <div className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4" key={index}>
+              <img
+                src={image}
+                alt={`Image ${index + 1}`}
+                style={{
+                  width: '100%',
+                  transform: hoveredImage === index ? 'scale(1.2)' : 'scale(1)',
+                  transition: 'transform 0.3s ease-in-out',
+                }}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+              />
+              <p className="text-center mt-2">Text under image {index + 1}</p>
+            </div>
+          ))}
         </div>
       </article>
     </Layout>
   );
 }
+
 
