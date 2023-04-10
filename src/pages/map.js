@@ -8,11 +8,13 @@ const mapContainerStyle = {
   height: '100vh',
 };
 
-async function getLatLngFromStreetName(streetName,AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8 ) {
+const apiKey = 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8'; // Define apiKey here
+
+async function getLatLngFromStreetName(streetName, apiKey) { // Replace AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8 with apiKey
   const response = await fetch(
     `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
       streetName
-    )}&key=${AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8}`
+    )}&key=${apiKey}`
   );
   const data = await response.json();
   if (data.status === 'OK' && data.results.length > 0) {
@@ -39,7 +41,7 @@ export default function MapPage() {
 
   useEffect(() => {
     const loader = new Loader({
-      apiKey: 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8', // Replace with your API key
+      apiKey: apiKey, // Use apiKey variable
       version: 'weekly',
       libraries: ['visualization'],
     });
@@ -54,7 +56,7 @@ export default function MapPage() {
       fetch('/CSV_TIME.csv')
         .then((response) => response.text())
         .then(async (csvData) => {
-          const coordinates = await parseAndGeocodeCsv(csvData, AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8);
+          const coordinates = await parseAndGeocodeCsv(csvData, apiKey); // Use apiKey variable
           const loadedHeatmap = new google.maps.visualization.HeatmapLayer({
             data: coordinates,
             map: loadedMap,
