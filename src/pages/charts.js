@@ -22,15 +22,15 @@ export default function ChartsPage() {
         <p>Charts go here:</p>
         <div className="flex flex-wrap justify-center">
           <div className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4">
-            <img src={chart1} alt="First Image" className="w-full transform scale-150" />
+            <img src={chart1} alt="First Image" className="w-full transform scale-120" />
             <p className="text-center mt-2">Text under first image</p>
           </div>
           <div className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4">
-            <img src={chart2} alt="Second Image" className="w-full transform scale-150" />
+            <img src={chart2} alt="Second Image" className="w-full transform scale-120" />
             <p className="text-center mt-2">Text under second image</p>
           </div>
           <div className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4">
-            <img src={chart3} alt="Third Image" className="w-full transform scale-150" />
+            <img src={chart3} alt="Third Image" className="w-full transform scale-120" />
             <p className="text-center mt-2">Text under third image</p>
           </div>
         </div>
