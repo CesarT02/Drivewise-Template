@@ -8,7 +8,7 @@ const mapContainerStyle = {
   height: '100vh',
 };
 
-const apiKey = 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8'; // Define apiKey here
+const apiKey = 'AIzaSyAuo4lx3_0ISKkyEx67yQe5VM0jq7joPt4'; // Define apiKey here
 
 async function getLatLngFromStreetName(streetName, apiKey) { // Replace AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8 with apiKey
   const response = await fetch(
@@ -41,7 +41,7 @@ export default function MapPage() {
 
   useEffect(() => {
     const loader = new Loader({
-      apiKey: apiKey, // Use apiKey variable
+      apiKey: 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8', // Use apiKey variable
       version: 'weekly',
       libraries: ['visualization'],
     });
@@ -56,7 +56,7 @@ export default function MapPage() {
       fetch('/CSV_TIME.csv')
         .then((response) => response.text())
         .then(async (csvData) => {
-          const coordinates = await parseAndGeocodeCsv(csvData, apiKey); // Use apiKey variable
+          const coordinates = await parseAndGeocodeCsv(csvData, 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8'); // Use apiKey variable
           const loadedHeatmap = new google.maps.visualization.HeatmapLayer({
             data: coordinates,
             map: loadedMap,
