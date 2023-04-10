@@ -31,7 +31,7 @@ export default function MapPage() {
         mapTypeId: 'satellite',
       });
 
-      fetch('../componets/cord-data/data.csv')
+      fetch('../components/cord-data/data.csv')
         .then((response) => response.text())
         .then((csvData) => {
           const results = Papa.parse(csvData, { header: true });
