@@ -38,7 +38,7 @@ export default function ChartsPage() {
                 alt={`Image ${index + 1}`}
                 style={{
                   width: '100%',
-                  transform: hoveredImage === index ? 'scale(1.2)' : 'scale(1)',
+                  transform: hoveredImage === index ? 'scale(1.5)' : 'scale(1)',
                   transition: 'transform 0.3s ease-in-out',
                 }}
                 onMouseEnter={() => handleMouseEnter(index)}
