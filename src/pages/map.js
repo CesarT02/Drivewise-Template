@@ -44,45 +44,35 @@ export default function MapPage() {
             return new Promise((resolve) => setTimeout(resolve, ms));
          }
 
-         async function parseAndGeocodeCsv(csvData, apiKey) {
-            const results = Papa.parse(csvData, { header: true });
-            const coordinates = [];
+        async function parseAndGeocodeCsv(csvData, apiKey) {
+  const results = Papa.parse(csvData, { header: true });
+  const coordinates = [];
 
-            for (const row of results.data) {
-               let fullAddress;
-               try {
-                  if (!row.streetName || !row.City || !row.State) {
-                     console.warn("Skipping invalid row:", row);
-                     continue;
-                  }
+  for (const row of results.data) {
+    let fullAddress;
+    try {
+      if (!row.streetName || !row.City || !row.State) {
+        console.warn('Skipping invalid row:', row);
+        continue;
+      }
 
-                  fullAddress = `${row.streetName}, ${row.City}, ${row.State}`;
-                  const coordinate = await getLatLngFromStreetName(
-                     fullAddress,
-                     apiKey
-                  );
+      fullAddress = `${row.streetName}, ${row.City}, ${row.State}`;
+      const coordinate = await getLatLngFromStreetName(fullAddress, apiKey);
 
-                  if (
-                     coordinate &&
-                     !isNaN(coordinate.lat()) &&
-                     !isNaN(coordinate.lng())
-                  ) {
-                     coordinates.push(coordinate);
-                  } else {
-                     console.warn(
-                        `Invalid coordinate for ${fullAddress}`,
-                        coordinate
-                     );
-                  }
+      if (coordinate && !isNaN(coordinate.lat()) && !isNaN(coordinate.lng())) {
+        coordinates.push(coordinate);
+      } else {
+        console.warn(`Invalid coordinate for ${fullAddress}`, coordinate);
+      }
 
-                  await sleep(100); // Adding a delay between requests
-               } catch (error) {
-                  console.error(`Failed to geocode ${fullAddress}`, error);
-               }
-            }
+      await sleep(100); // Adding a delay between requests
+    } catch (error) {
+      console.error(`Failed to geocode ${fullAddress}`, error);
+    }
+  }
 
-            return coordinates;
-         }
+  return coordinates.filter((coord) => !isNaN(coord.lat()) && !isNaN(coord.lng()));
+}
 
          const loadedMap = new google.maps.Map(mapRef.current, {
             zoom: 13,
