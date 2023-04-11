@@ -95,21 +95,24 @@ export default function MapPage() {
         return coordinates;
       }
 
-      function switchData(filterFunction) {
-        if (!heatmap) {
-          console.error('Heatmap is not initialized yet');
-          return;
-        }
+     const switchData = (filterFunction) => {
+   if (!heatmap) {
+      console.error("Heatmap is not initialized yet");
+      return;
+   }
 
-        fetch('../CSV_TIME.csv')
-          .then((response) => response.text())
-          .then(async (csvData) => {
-            const filteredData = parseCsv(csvData, filterFunction);
-            const coordinates = await geocodeFilteredData(filteredData, apiKey);
+   fetch("../CSV_TIME.csv")
+      .then((response) => response.text())
+      .then((csvData) => {
+         const results = Papa.parse(csvData, { header: true });
+         const filteredData = results.data.filter(filterFunction);
+         const coordinates = filteredData.map(
+            (row) => new google.maps.LatLng(row.lat, row.lng)
+         );
 
-            heatmap.setData(coordinates);
-          });
-}
+         heatmap.setData(coordinates);
+      });
+};
 
       const toggleHeatmap = () => {
         if (heatmap) {
