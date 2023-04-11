@@ -35,19 +35,6 @@ async function parseAndGeocodeCsv(csvData, apiKey) {
   const coordinates = [];
 
   for (const row of nonEmptyRows) {
-    coordinates.push(await getLatLngFromStreetName(row.streetName, apiKey));
-    await sleep(200); // Adjust the sleep time as needed (in milliseconds)
-  }
-
-  return coordinates;
-}
-
-async function parseAndGeocodeCsv(csvData, apiKey) {
-  const results = Papa.parse(csvData, { header: true });
-  const nonEmptyRows = results.data.filter(row => row.streetName.trim() !== '');
-  const coordinates = [];
-
-  for (const row of nonEmptyRows) {
     try {
       const latLng = await getLatLngFromStreetName(row.streetName, apiKey);
       coordinates.push(latLng);
