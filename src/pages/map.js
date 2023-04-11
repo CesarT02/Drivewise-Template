@@ -155,25 +155,7 @@ export default function MapPage() {
         }
       };
 
-      const switchData = (filterFunction) => {
-        if (!heatmap) {
-          console.error("Heatmap is not initialized yet");
-          return;
-        }
-
-        fetch("../CSV_TIME.csv")
-          .then((response) => response.text())
-          .then((csvData) => {
-            const results = Papa.parse(csvData, { header: true });
-            const filteredData = results.data.filter(filterFunction);
-            const coordinates = filteredData.map(
-              (row) => new google.maps.LatLng(row.lat, row.lng)
-            );
-
-            heatmap.setData(coordinates);
-          });
-      };
-
+      
       const filterByVehicleCollision = (data) => {
         const allowedTypes = ["Vehicle / Vehicle"];
 
