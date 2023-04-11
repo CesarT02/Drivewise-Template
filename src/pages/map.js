@@ -116,7 +116,7 @@ export default function MapPage() {
   }
 
   function switchData(filterFunction) {
-    fetch('../components/cord-data/data.csv')
+    fetch('/CSV_TIME.csv')
       .then((response) => response.text())
       .then((csvData) => {
         const results = Papa.parse(csvData, { header: true });
@@ -131,20 +131,15 @@ export default function MapPage() {
   function filterByVehicleCollision(data) {
     const allowedTypes = [
       'Vehicle / Vehicle',
-      'Vehicle / Bicycle',
-      'Vehicle / Pedestrian',
-      'Single Vehicle',
-      'Motorcycle / Vehicle',
-      'Vehicle / Motorcycle',
-      'Single Motorcycle',
+     
     ];
 
     return allowedTypes.includes(data.vehiclecollision);
   }
 
   function filterByWeatherAndDay(data) {
-    const allowedWeather = ['rain', 'clear', 'cloudy'];
-    const allowedDay = ['light', 'dark', 'dusk'];
+    const allowedWeather = ['Rain', 'Clear', 'Cloudy', 'Sleet / HA'];
+    const allowedDay = ['DayLight', 'Dark', 'Dusk', 'Dawn', 'Dark-Lighted', 'Dark-Not Lighted'];
 
     return allowedWeather.includes(data.weather) && allowedDay.includes(data.day);
   }
