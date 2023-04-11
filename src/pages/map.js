@@ -44,27 +44,6 @@ export default function MapPage() {
         return new Promise((resolve) => setTimeout(resolve, ms));
       }
 
-      function filterByVehicleCollision(data) {
-        const allowedTypes = ["Vehicle / Vehicle"];
-
-        return allowedTypes.includes(data.vehicleCollision);
-      }
-
-      function filterByWeatherAndDay(data) {
-        const allowedWeather = ["Rain", "Clear", "Cloudy", "Sleet / HA"];
-        const allowedDay = [
-          "DayLight",
-          "Dark",
-          "Dusk",
-          "Dark-Not Lighted",
-          "Dark-Lighted",
-        ];
-
-        return (
-          allowedWeather.includes(data.Weather) && allowedDay.includes(data.Day)
-        );
-      }
-
       function parseCsv(csvData, filterFunction) {
         const results = Papa.parse(csvData, { header: true });
         const filteredData = results.data.filter(filterFunction);
@@ -107,7 +86,6 @@ export default function MapPage() {
 
         return coordinates;
       }
-
       const switchData = (filterFunction) => {
         if (!heatmap) {
           console.error("Heatmap is not initialized yet");
@@ -128,30 +106,30 @@ export default function MapPage() {
       };
 
       const toggleHeatmap = () => {
-        if (heatmap) {
-          heatmap.setMap(heatmap.getMap() ? null : map);
-        }
-      };
+    if (heatmap) {
+      heatmap.setMap(heatmap.getMap() ? null : map);
+    }
+  };
 
-      const changeGradient = () => {
-        const gradient = [
-          "rgba(0, 255, 255, 0)",
-          "rgba(0, 255, 255, 1)",
-          "rgba(0, 191, 255, 1)",
-          "rgba(0, 127, 255, 1)",
-          "rgba(0, 63, 255, 1)",
-          "rgba(0, 0, 255, 1)",
-          "rgba(0, 0, 223, 1)",
-          "rgba(0, 0, 191, 1)",
-          "rgba(0, 0, 159, 1)",
-          "rgba(0, 0, 127, 1)",
-          "rgba(63, 0, 91, 1)",
-          "rgba(127, 0, 63, 1)",
-          "rgba(191, 0, 31, 1)",
-          "rgba(255, 0, 0, 1)",
-        ];
+  const changeGradient = () => {
+    const gradient = [
+      "rgba(0, 255, 255, 0)",
+      "rgba(0, 255, 255, 1)",
+      "rgba(0, 191, 255, 1)",
+      "rgba(0, 127, 255, 1)",
+      "rgba(0, 63, 255, 1)",
+      "rgba(0, 0, 255, 1)",
+      "rgba(0, 0, 223, 1)",
+      "rgba(0, 0, 191, 1)",
+      "rgba(0, 0, 159, 1)",
+      "rgba(0, 0, 127, 1)",
+      "rgba(63, 0, 91, 1)",
+      "rgba(127, 0, 63, 1)",
+      "rgba(191, 0, 31, 1)",
+      "rgba(255, 0, 0, 1)",
+    ];
 
-        if (heatmap) {
+     if (heatmap) {
           heatmap.set("gradient", heatmap.get("gradient") ? null : gradient);
         }
       };
@@ -240,3 +218,4 @@ export default function MapPage() {
     </>
   );
 }
+
