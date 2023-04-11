@@ -35,7 +35,11 @@ async function parseAndGeocodeCsv(csvData, apiKey) {
   const coordinates = [];
 
   for (const row of nonEmptyRows) {
-    coordinates.push(await getLatLngFromStreetName(row.streetName, apiKey));
+    try {
+      coordinates.push(await getLatLngFromStreetName(row.streetName, apiKey));
+    } catch (error) {
+      console.error(`Failed to geocode "${row.streetName}": ${error.message}`);
+    }
     await sleep(200); // Adjust the sleep time as needed (in milliseconds)
   }
 
