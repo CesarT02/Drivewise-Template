@@ -86,6 +86,11 @@ export default function MapPage() {
       heatmap.setMap(heatmap.getMap() ? null : map);
     }
   }
+  function toggleHeatmap() {
+    if (heatmap) {
+      heatmap.setMap(heatmap.getMap() ? null : map);
+    }
+  }
 
  function changeGradient() {
   const gradient = [
