@@ -49,8 +49,9 @@ export default function MapPage() {
         const coordinates = [];
 
         for (const row of results.data) {
+          let fullAddress;
           try {
-            const fullAddress = `${row.streetName}, ${row.City}, ${row.State}`;
+            fullAddress = `${row.streetName}, ${row.City}, ${row.State}`;
             const coordinate = await getLatLngFromStreetName(fullAddress, apiKey);
             coordinates.push(coordinate);
             await sleep(200); // Adding a delay between requests
@@ -61,6 +62,7 @@ export default function MapPage() {
 
         return coordinates;
       }
+
 
       const loadedMap = new google.maps.Map(mapRef.current, {
         zoom: 13,
