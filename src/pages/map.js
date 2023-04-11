@@ -10,6 +10,8 @@ const mapContainerStyle = {
 
 const apiKey = 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8';
 
+const google = window.google;
+
 async function getLatLngFromStreetName(fullAddress, apiKey) {
   const response = await fetch(
     `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
