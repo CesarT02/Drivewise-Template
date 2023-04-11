@@ -25,21 +25,26 @@ async function getLatLngFromStreetName(fullAddress, apiKey) {
   }
 }
 
+async function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 async function parseAndGeocodeCsv(csvData, apiKey) {
   const results = Papa.parse(csvData, { header: true });
-  const coordinatesPromises = results.data.map(async (row) => {
+  const coordinates = [];
+
+  for (const row of results.data) {
     try {
       const fullAddress = `${row.streetName}, ${row.City}, ${row.State}`;
       const coordinate = await getLatLngFromStreetName(fullAddress, apiKey);
-      return coordinate;
+      coordinates.push(coordinate);
+      await sleep(200); // Adding a delay between requests
     } catch (error) {
       console.error(`Failed to geocode ${fullAddress}`, error);
-      return null;
     }
-  });
+  }
 
-  const coordinates = await Promise.all(coordinatesPromises);
-  return coordinates.filter((coordinate) => coordinate !== null);
+  return coordinates;
 }
 
 export default function MapPage() {
