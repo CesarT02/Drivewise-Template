@@ -8,9 +8,8 @@ const mapContainerStyle = {
   height: '100vh',
 };
 
-const apiKey = 'AIzaSyAuo4lx3_0ISKkyEx67yQe5VM0jq7joPt4'; // Define apiKey here
-
-async function getLatLngFromStreetName(streetName, apiKey) { // Replace AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8 with apiKey
+// Define a single API key for both heatmap and geocoding
+async function getLatLngFromStreetName(streetName, 'AIzaSyBSANpIqY6QAVQLAYgyVDH1QUi7PckpisU') {
   const response = await fetch(
     `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
       streetName
@@ -25,10 +24,10 @@ async function getLatLngFromStreetName(streetName, apiKey) { // Replace AIzaSyAu
   }
 }
 
-async function parseAndGeocodeCsv(csvData, apiKey) {
+async function parseAndGeocodeCsv(csvData, 'AIzaSyBSANpIqY6QAVQLAYgyVDH1QUi7PckpisU') {
   const results = Papa.parse(csvData, { header: true });
   const coordinatesPromises = results.data.map((row) =>
-    getLatLngFromStreetName(row.streetName, apiKey)
+    getLatLngFromStreetName(row.streetName, 'AIzaSyBSANpIqY6QAVQLAYgyVDH1QUi7PckpisU')
   );
   const coordinates = await Promise.all(coordinatesPromises);
   return coordinates;
@@ -41,7 +40,7 @@ export default function MapPage() {
 
   useEffect(() => {
     const loader = new Loader({
-      apiKey: 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8', // Use apiKey variable
+      apiKey: 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8', // Use the single API key variable
       version: 'weekly',
       libraries: ['visualization'],
     });
@@ -56,7 +55,7 @@ export default function MapPage() {
       fetch('/CSV_TIME.csv')
         .then((response) => response.text())
         .then(async (csvData) => {
-          const coordinates = await parseAndGeocodeCsv(csvData, 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8'); // Use apiKey variable
+          const coordinates = await parseAndGeocodeCsv(csvData, apiKey); // Use the single API key variable
           const loadedHeatmap = new google.maps.visualization.HeatmapLayer({
             data: coordinates,
             map: loadedMap,
