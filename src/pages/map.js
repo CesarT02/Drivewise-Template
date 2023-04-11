@@ -115,33 +115,39 @@ export default function MapPage() {
     heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
   }
 
-  function switchData(filterFunction) {
-    fetch('/CSV_TIME.csv')
-      .then((response) => response.text())
-      .then((csvData) => {
-        const results = Papa.parse(csvData, { header: true });
-        const filteredData = results.data.filter(filterFunction);
-        const coordinates = filteredData.map((row) => new google.maps.LatLng(row.lat, row.lng));
+    async function switchData(filterFunction) {
+    const response = await fetch('/CSV_TIME.csv');
+    const csvData = await response.text();
+    const results = Papa.parse(csvData, { header: true });
+    const filteredData = results.data.filter(filterFunction);
+    const coordinates = [];
 
-        heatmap
-                .setData(coordinates);
-    });
+    for (const row of filteredData) {
+      try {
+        const latLng = await getLatLngFromStreetName(row.streetName, apiKey);
+        coordinates.push(latLng);
+      } catch (error) {
+        console.error(`Failed to geocode street name "${row.streetName}":`, error);
+      }
+      await sleep(200); // Adjust the sleep time as needed (in milliseconds)
+    }
+
+    heatmap.setData(coordinates);
   }
-
   function filterByVehicleCollision(data) {
     const allowedTypes = [
       'Vehicle / Vehicle',
      
     ];
 
-    return allowedTypes.includes(data.vehiclecollision);
+    return allowedTypes.includes(data.vehicleCollision);
   }
 
   function filterByWeatherAndDay(data) {
     const allowedWeather = ['Rain', 'Clear', 'Cloudy', 'Sleet / HA'];
     const allowedDay = ['DayLight', 'Dark', 'Dusk', 'Dawn', 'Dark-Lighted', 'Dark-Not Lighted'];
 
-    return allowedWeather.includes(data.weather) && allowedDay.includes(data.day);
+    return allowedWeather.includes(data.Weather) && allowedDay.includes(data.Day);
   }
    async function updateHeatmapData(filterFunction) {
       const coordinates = await switchData(filterFunction, csvDataRows, apiKey);
