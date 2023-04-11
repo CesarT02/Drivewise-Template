@@ -35,17 +35,21 @@ async function parseAndGeocodeCsv(csvData, apiKey) {
   const coordinates = [];
 
   for (const row of nonEmptyRows) {
-    try {
-      coordinates.push(await getLatLngFromStreetName(row.streetName, apiKey));
-    } catch (error) {
-      console.error(`Failed to geocode "${row.streetName}": ${error.message}`);
-    }
+    coordinates.push(await getLatLngFromStreetName(row.streetName, apiKey));
     await sleep(200); // Adjust the sleep time as needed (in milliseconds)
   }
 
   return coordinates;
 }
 
+async function switchData(filterFunction, csvDataRows, apiKey) {
+  const filteredData = csvDataRows.filter(filterFunction);
+  const coordinatesPromises = filteredData.map((row) =>
+    getLatLngFromStreetName(row.streetName, apiKey)
+  );
+  const coordinates = await Promise.all(coordinatesPromises);
+  return coordinates;
+}
 export default function MapPage() {
   const mapRef = useRef();
   const [map, setMap] = useState(null);
@@ -142,6 +146,10 @@ export default function MapPage() {
     const allowedDay = ['DayLight', 'Dark', 'Dusk', 'Dawn', 'Dark-Lighted', 'Dark-Not Lighted'];
 
     return allowedWeather.includes(data.weather) && allowedDay.includes(data.day);
+  }
+   async function updateHeatmapData(filterFunction) {
+      const coordinates = await switchData(filterFunction, csvDataRows, apiKey);
+      heatmap.setData(coordinates);
   }
 
   function switchToVehicleCollisionData() {
