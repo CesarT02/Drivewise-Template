@@ -27,12 +27,19 @@ async function getLatLngFromStreetName(fullAddress, apiKey) {
 
 async function parseAndGeocodeCsv(csvData, apiKey) {
   const results = Papa.parse(csvData, { header: true });
-  const coordinatesPromises = results.data.map((row) => {
-    const fullAddress = `${row.streetName}, ${row.City}, ${row.State}`;
-    return getLatLngFromStreetName(fullAddress, apiKey);
+  const coordinatesPromises = results.data.map(async (row) => {
+    try {
+      const fullAddress = `${row.streetName}, ${row.City}, ${row.State}`;
+      const coordinate = await getLatLngFromStreetName(fullAddress, apiKey);
+      return coordinate;
+    } catch (error) {
+      console.error(`Failed to geocode ${fullAddress}`, error);
+      return null;
+    }
   });
+
   const coordinates = await Promise.all(coordinatesPromises);
-  return coordinates;
+  return coordinates.filter((coordinate) => coordinate !== null);
 }
 
 export default function MapPage() {
