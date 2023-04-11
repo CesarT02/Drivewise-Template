@@ -45,18 +45,24 @@ export default function MapPage() {
       }
 
       function filterByVehicleCollision(data) {
-        const allowedTypes = [
-          'Vehicle / Vehicle'
-        ];
+        const allowedTypes = ["Vehicle / Vehicle"];
 
         return allowedTypes.includes(data.vehicleCollision);
       }
 
       function filterByWeatherAndDay(data) {
-        const allowedWeather = ['Rain', 'Clear', 'Cloudy', 'Sleet / HA'];
-        const allowedDay = ['DayLight', 'Dark', 'Dusk', 'Dark-Not Lighted' , 'Dark-Lighted'];
+        const allowedWeather = ["Rain", "Clear", "Cloudy", "Sleet / HA"];
+        const allowedDay = [
+          "DayLight",
+          "Dark",
+          "Dusk",
+          "Dark-Not Lighted",
+          "Dark-Lighted",
+        ];
 
-        return allowedWeather.includes(data.Weather) && allowedDay.includes(data.Day);
+        return (
+          allowedWeather.includes(data.Weather) && allowedDay.includes(data.Day)
+        );
       }
 
       function parseCsv(csvData, filterFunction) {
@@ -73,14 +79,21 @@ export default function MapPage() {
           let fullAddress;
           try {
             if (!row.streetName || !row.City || !row.State) {
-              console.warn('Skipping invalid row:', row);
+              console.warn("Skipping invalid row:", row);
               continue;
             }
 
             fullAddress = `${row.streetName}, ${row.City}, ${row.State}`;
-            const coordinate = await getLatLngFromStreetName(fullAddress, apiKey);
+            const coordinate = await getLatLngFromStreetName(
+              fullAddress,
+              apiKey
+            );
 
-            if (coordinate && !isNaN(coordinate.lat()) && !isNaN(coordinate.lng())) {
+            if (
+              coordinate &&
+              !isNaN(coordinate.lat()) &&
+              !isNaN(coordinate.lng())
+            ) {
               coordinates.push(coordinate);
             } else {
               console.warn(`Invalid coordinate for ${fullAddress}`, coordinate);
@@ -95,24 +108,24 @@ export default function MapPage() {
         return coordinates;
       }
 
-     const switchData = (filterFunction) => {
-   if (!heatmap) {
-      console.error("Heatmap is not initialized yet");
-      return;
-   }
+      const switchData = (filterFunction) => {
+        if (!heatmap) {
+          console.error("Heatmap is not initialized yet");
+          return;
+        }
 
-   fetch("../CSV_TIME.csv")
-      .then((response) => response.text())
-      .then((csvData) => {
-         const results = Papa.parse(csvData, { header: true });
-         const filteredData = results.data.filter(filterFunction);
-         const coordinates = filteredData.map(
-            (row) => new google.maps.LatLng(row.lat, row.lng)
-         );
+        fetch("../CSV_TIME.csv")
+          .then((response) => response.text())
+          .then((csvData) => {
+            const results = Papa.parse(csvData, { header: true });
+            const filteredData = results.data.filter(filterFunction);
+            const coordinates = filteredData.map(
+              (row) => new google.maps.LatLng(row.lat, row.lng)
+            );
 
-         heatmap.setData(coordinates);
-      });
-};
+            heatmap.setData(coordinates);
+          });
+      };
 
       const toggleHeatmap = () => {
         if (heatmap) {
@@ -155,27 +168,6 @@ export default function MapPage() {
         }
       };
 
-      
-      const filterByVehicleCollision = (data) => {
-        const allowedTypes = ["Vehicle / Vehicle"];
-
-        return allowedTypes.includes(data.vehicleCollision);
-      };
-
-      const filterByWeatherAndDay = (data) => {
-        const allowedWeather = ["rain", "clear", "cloudy", "Sleet / HA"];
-        const allowedDay = [
-          "DayLight",
-          "Dark",
-          "Dusk",
-          "Dark-Not Lighted",
-          "Dark-Lighted",
-        ];
-        return (
-          allowedWeather.includes(data.Weather) && allowedDay.includes(data.Day)
-        );
-      };
-
       const switchToVehicleCollisionData = () => {
         switchData(filterByVehicleCollision);
       };
@@ -200,7 +192,7 @@ export default function MapPage() {
           </button>
           <button
             id="switch-to-vehicle-collision-data"
-            onClick={ switchToVehicleCollisionData
+            onClick={switchToVehicleCollisionData}
           >
             Switch to Vehicle Collision Data
           </button>
