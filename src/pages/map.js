@@ -10,10 +10,10 @@ const mapContainerStyle = {
 
 const apiKey = 'AIzaSyBSANpIqY6QAVQLAYgyVDH1QUi7PckpisU';
 
-async function getLatLngFromStreetName(streetName, apiKey) {
+async function getLatLngFromStreetName(fullAddress, apiKey) {
   const response = await fetch(
     `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-      streetName
+      fullAddress
     )}&key=${apiKey}`
   );
   const data = await response.json();
@@ -21,15 +21,16 @@ async function getLatLngFromStreetName(streetName, apiKey) {
     const location = data.results[0].geometry.location;
     return new google.maps.LatLng(location.lat, location.lng);
   } else {
-    throw new Error('Failed to geocode street name');
+    throw new Error('Failed to geocode full address');
   }
 }
 
 async function parseAndGeocodeCsv(csvData, apiKey) {
   const results = Papa.parse(csvData, { header: true });
-  const coordinatesPromises = results.data.map((row) =>
-    getLatLngFromStreetName(row.streetName, apiKey)
-  );
+  const coordinatesPromises = results.data.map((row) => {
+    const fullAddress = `${row.streetName}, ${row.City}, ${row.State}`;
+    return getLatLngFromStreetName(fullAddress, apiKey);
+  });
   const coordinates = await Promise.all(coordinatesPromises);
   return coordinates;
 }
@@ -133,14 +134,14 @@ function changeOpacity() {
       'Single Motorcycle',
     ];
 
-    return allowedTypes.includes(data.vehiclecollision);
+    return allowedTypes.includes(data.vehicleCollision);
   }
 
   function filterByWeatherAndDay(data) {
     const allowedWeather = ['rain', 'clear', 'cloudy'];
     const allowedDay = ['light', 'dark', 'dusk'];
 
-    return allowedWeather.includes(data.weather) && allowedDay.includes(data.day);
+    return allowedWeather.includes(data.Weather) && allowedDay.includes(data.Day);
   }
 
   function switchToVehicleCollisionData() {
