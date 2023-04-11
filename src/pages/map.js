@@ -8,8 +8,9 @@ const mapContainerStyle = {
   height: '100vh',
 };
 
-// Define a single API key for both heatmap and geocoding
-async function getLatLngFromStreetName(streetName, 'AIzaSyBSANpIqY6QAVQLAYgyVDH1QUi7PckpisU') {
+const apiKey = 'AIzaSyBSANpIqY6QAVQLAYgyVDH1QUi7PckpisU';
+
+async function getLatLngFromStreetName(streetName, apiKey) {
   const response = await fetch(
     `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
       streetName
@@ -24,10 +25,10 @@ async function getLatLngFromStreetName(streetName, 'AIzaSyBSANpIqY6QAVQLAYgyVDH1
   }
 }
 
-async function parseAndGeocodeCsv(csvData, 'AIzaSyBSANpIqY6QAVQLAYgyVDH1QUi7PckpisU') {
+async function parseAndGeocodeCsv(csvData, apiKey) {
   const results = Papa.parse(csvData, { header: true });
   const coordinatesPromises = results.data.map((row) =>
-    getLatLngFromStreetName(row.streetName, 'AIzaSyBSANpIqY6QAVQLAYgyVDH1QUi7PckpisU')
+    getLatLngFromStreetName(row.streetName, apiKey)
   );
   const coordinates = await Promise.all(coordinatesPromises);
   return coordinates;
@@ -40,7 +41,7 @@ export default function MapPage() {
 
   useEffect(() => {
     const loader = new Loader({
-      apiKey: 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8', // Use the single API key variable
+      apiKey: apiKey,
       version: 'weekly',
       libraries: ['visualization'],
     });
@@ -55,7 +56,7 @@ export default function MapPage() {
       fetch('/CSV_TIME.csv')
         .then((response) => response.text())
         .then(async (csvData) => {
-          const coordinates = await parseAndGeocodeCsv(csvData, apiKey); // Use the single API key variable
+          const coordinates = await parseAndGeocodeCsv(csvData, apiKey);
           const loadedHeatmap = new google.maps.visualization.HeatmapLayer({
             data: coordinates,
             map: loadedMap,
