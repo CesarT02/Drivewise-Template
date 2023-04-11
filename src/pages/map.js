@@ -44,11 +44,32 @@ export default function MapPage() {
             return new Promise((resolve) => setTimeout(resolve, ms));
          }
 
-        async function parseAndGeocodeCsv(csvData, apiKey) {
+    function filterByVehicleCollision(data) {
+  const allowedTypes = [
+    'Vehicle / Vehicle'
+  ];
+
+  return allowedTypes.includes(data.vehicleCollision);
+}
+
+function filterByWeatherAndDay(data) {
+  const allowedWeather = ['Rain', 'Clear', 'Cloudy', 'Sleet / HA'];
+  const allowedDay = ['DayLight', 'Dark', 'Dusk', 'Dark-Not Lighted' , 'Dark-Lighted'];
+
+  return allowedWeather.includes(data.Weather) && allowedDay.includes(data.Day);
+}
+
+function parseCsv(csvData, filterFunction) {
   const results = Papa.parse(csvData, { header: true });
+  const filteredData = results.data.filter(filterFunction);
+
+  return filteredData;
+}
+
+async function geocodeFilteredData(filteredData, apiKey) {
   const coordinates = [];
 
-  for (const row of results.data) {
+  for (const row of filteredData) {
     let fullAddress;
     try {
       if (!row.streetName || !row.City || !row.State) {
@@ -71,31 +92,25 @@ export default function MapPage() {
     }
   }
 
-  return coordinates.filter((coord) => !isNaN(coord.lat()) && !isNaN(coord.lng()));
+  return coordinates;
 }
 
-         const loadedMap = new google.maps.Map(mapRef.current, {
-            zoom: 13,
-            center: { lat: 32.248814, lng: -110.987419 },
-            mapTypeId: "satellite",
-         });
+// Update the switchData function
+function switchData(filterFunction) {
+  if (!heatmap) {
+    console.error('Heatmap is not initialized yet');
+    return;
+  }
 
-         fetch("/CSV_TIME.csv")
-            .then((response) => response.text())
-            .then(async (csvData) => {
-               const coordinates = await parseAndGeocodeCsv(csvData, apiKey);
-               const loadedHeatmap = new google.maps.visualization.HeatmapLayer(
-                  {
-                     data: coordinates,
-                     map: loadedMap,
-                  }
-               );
+  fetch('../CSV_TIME.csv')
+    .then((response) => response.text())
+    .then(async (csvData) => {
+      const filteredData = parseCsv(csvData, filterFunction);
+      const coordinates = await geocodeFilteredData(filteredData, apiKey);
 
-               setMap(loadedMap);
-               setHeatmap(loadedHeatmap);
-            });
-      });
-   }, []);
+      heatmap.setData(coordinates);
+    });
+}
 
    const toggleHeatmap = () => {
       if (heatmap) {
