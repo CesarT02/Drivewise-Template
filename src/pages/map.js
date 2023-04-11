@@ -44,25 +44,41 @@ export default function MapPage() {
         return new Promise(resolve => setTimeout(resolve, ms));
       }
 
-      async function parseAndGeocodeCsv(csvData, apiKey) {
+      async function parseCsvToGeoJson(csvData) {
         const results = Papa.parse(csvData, { header: true });
-        const coordinates = [];
+        const features = [];
 
         for (const row of results.data) {
           let fullAddress;
           try {
+            if (!row.streetName || !row.City || !row.State) {
+              console.warn('Incomplete address data:', row);
+              continue;
+            }
+
             fullAddress = `${row.streetName}, ${row.City}, ${row.State}`;
             const coordinate = await getLatLngFromStreetName(fullAddress, apiKey);
-            coordinates.push(coordinate);
+            features.push({
+              type: 'Feature',
+              geometry: {
+                type: 'Point',
+                coordinates: [coordinate.lng(), coordinate.lat()],
+              },
+              properties: row,
+            });
             await sleep(200); // Adding a delay between requests
           } catch (error) {
             console.error(`Failed to geocode ${fullAddress}`, error);
           }
         }
 
-        return coordinates;
-      }
+        const geoJson = {
+          type: 'FeatureCollection',
+          features,
+        };
 
+        return geoJson;
+      }
 
       const loadedMap = new google.maps.Map(mapRef.current, {
         zoom: 13,
