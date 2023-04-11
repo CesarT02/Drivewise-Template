@@ -42,11 +42,12 @@ async function parseAndGeocodeCsv(csvData, apiKey) {
   return coordinates;
 }
 
-async function switchData(filterFunction, csvData, apiKey) {
-  const filteredData = csvData.filter(filterFunction);
+async function parseAndGeocodeCsv(csvData, apiKey) {
+  const results = Papa.parse(csvData, { header: true });
+  const nonEmptyRows = results.data.filter(row => row.streetName.trim() !== '');
   const coordinates = [];
 
-  for (const row of filteredData) {
+  for (const row of nonEmptyRows) {
     try {
       const latLng = await getLatLngFromStreetName(row.streetName, apiKey);
       coordinates.push(latLng);
