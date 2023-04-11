@@ -44,7 +44,7 @@ export default function MapPage() {
         return new Promise(resolve => setTimeout(resolve, ms));
       }
 
-    async function parseAndGeocodeCsv(csvData, apiKey) {
+async function parseAndGeocodeCsv(csvData, apiKey) {
   const results = Papa.parse(csvData, { header: true });
   const coordinates = [];
 
@@ -58,8 +58,14 @@ export default function MapPage() {
 
       fullAddress = `${row.streetName}, ${row.City}, ${row.State}`;
       const coordinate = await getLatLngFromStreetName(fullAddress, apiKey);
-      coordinates.push(coordinate);
-      await sleep(200); // Adding a delay between requests
+
+      if (coordinate && !isNaN(coordinate.lat()) && !isNaN(coordinate.lng())) {
+        coordinates.push(coordinate);
+      } else {
+        console.warn(`Invalid coordinate for ${fullAddress}`, coordinate);
+      }
+
+      await sleep(100); // Adding a delay between requests
     } catch (error) {
       console.error(`Failed to geocode ${fullAddress}`, error);
     }
