@@ -42,12 +42,20 @@ async function parseAndGeocodeCsv(csvData, apiKey) {
   return coordinates;
 }
 
-async function switchData(filterFunction, csvDataRows, apiKey) {
-  const filteredData = csvDataRows.filter(filterFunction);
-  const coordinatesPromises = filteredData.map((row) =>
-    getLatLngFromStreetName(row.streetName, apiKey)
-  );
-  const coordinates = await Promise.all(coordinatesPromises);
+async function switchData(filterFunction, csvData, apiKey) {
+  const filteredData = csvData.filter(filterFunction);
+  const coordinates = [];
+
+  for (const row of filteredData) {
+    try {
+      const latLng = await getLatLngFromStreetName(row.streetName, apiKey);
+      coordinates.push(latLng);
+    } catch (error) {
+      console.error(`Failed to geocode street name "${row.streetName}":`, error);
+    }
+    await sleep(200); // Adjust the sleep time as needed (in milliseconds)
+  }
+
   return coordinates;
 }
 export default function MapPage() {
