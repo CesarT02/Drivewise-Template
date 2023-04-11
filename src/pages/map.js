@@ -16,14 +16,20 @@ export default function MapPage() {
   const [heatmap, setHeatmap] = useState(null);
 
   useEffect(() => {
-    const loader = new Loader({
-      apiKey: apiKey,
-      version: "weekly",
-      libraries: ["visualization"],
-    });
+    if (typeof window === "undefined") {
+      return;
+    }
 
-    loader.load().then(async () => {
+    const loadMap = async () => {
+      const loader = new Loader({
+        apiKey: apiKey,
+        version: "weekly",
+        libraries: ["visualization"],
+      });
+
+      await loader.load();
       const google = window.google;
+
 
       async function getLatLngFromStreetName(fullAddress, apiKey) {
         const response = await fetch(
