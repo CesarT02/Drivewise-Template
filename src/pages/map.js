@@ -10,45 +10,6 @@ const mapContainerStyle = {
 
 const apiKey = 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8';
 
-const google = window.google;
-
-async function getLatLngFromStreetName(fullAddress, apiKey) {
-  const response = await fetch(
-    `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-      fullAddress
-    )}&key=${apiKey}`
-  );
-  const data = await response.json();
-  if (data.status === 'OK' && data.results.length > 0) {
-    const location = data.results[0].geometry.location;
-    return new google.maps.LatLng(location.lat, location.lng);
-  } else {
-    throw new Error('Failed to geocode full address');
-  }
-}
-
-async function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function parseAndGeocodeCsv(csvData, apiKey) {
-  const results = Papa.parse(csvData, { header: true });
-  const coordinates = [];
-
-  for (const row of results.data) {
-    try {
-      const fullAddress = `${row.streetName}, ${row.City}, ${row.State}`;
-      const coordinate = await getLatLngFromStreetName(fullAddress, apiKey);
-      coordinates.push(coordinate);
-      await sleep(200); // Adding a delay between requests
-    } catch (error) {
-      console.error(`Failed to geocode ${fullAddress}`, error);
-    }
-  }
-
-  return coordinates;
-}
-
 export default function MapPage() {
   const mapRef = useRef();
   const [map, setMap] = useState(null);
@@ -61,7 +22,46 @@ export default function MapPage() {
       libraries: ['visualization'],
     });
 
-    loader.load().then(() => {
+    loader.load().then(async () => {
+      const google = window.google;
+
+      async function getLatLngFromStreetName(fullAddress, apiKey) {
+        const response = await fetch(
+          `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
+            fullAddress
+          )}&key=${apiKey}`
+        );
+        const data = await response.json();
+        if (data.status === 'OK' && data.results.length > 0) {
+          const location = data.results[0].geometry.location;
+          return new google.maps.LatLng(location.lat, location.lng);
+        } else {
+          throw new Error('Failed to geocode full address');
+        }
+      }
+
+      async function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      async function parseAndGeocodeCsv(csvData, apiKey) {
+        const results = Papa.parse(csvData, { header: true });
+        const coordinates = [];
+
+        for (const row of results.data) {
+          try {
+            const fullAddress = `${row.streetName}, ${row.City}, ${row.State}`;
+            const coordinate = await getLatLngFromStreetName(fullAddress, apiKey);
+            coordinates.push(coordinate);
+            await sleep(200); // Adding a delay between requests
+          } catch (error) {
+            console.error(`Failed to geocode ${fullAddress}`, error);
+          }
+        }
+
+        return coordinates;
+      }
+
       const loadedMap = new google.maps.Map(mapRef.current, {
         zoom: 13,
         center: { lat: 32.248814, lng: -110.987419 },
