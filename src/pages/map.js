@@ -12,6 +12,8 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+const apiKey = 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8';
+
 async function getLatLngFromStreetName(streetName, apiKey) {
   const response = await fetch(
     `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
@@ -47,7 +49,7 @@ export default function MapPage() {
 
   useEffect(() => {
     const loader = new Loader({
-      apiKey: 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8', // Replace with your API key
+      apiKey: apiKey, // Replace with your API key
       version: 'weekly',
       libraries: ['visualization'],
     });
