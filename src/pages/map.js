@@ -8,7 +8,7 @@ const mapContainerStyle = {
   height: '100vh',
 };
 
-const apiKey = 'AIzaSyBSANpIqY6QAVQLAYgyVDH1QUi7PckpisU';
+const apiKey = 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8';
 
 async function getLatLngFromStreetName(fullAddress, apiKey) {
   const response = await fetch(
@@ -86,10 +86,22 @@ export default function MapPage() {
       heatmap.setMap(heatmap.getMap() ? null : map);
     }
   }
-  function toggleHeatmap() {
-    if (heatmap) {
-      heatmap.setMap(heatmap.getMap() ? null : map);
+
+  function switchData(filterFunction) {
+    if (!heatmap) {
+      console.error('Heatmap is not initialized yet');
+      return;
     }
+
+    fetch('../CSV_TIME.csv')
+      .then((response) => response.text())
+      .then((csvData) => {
+        const results = Papa.parse(csvData, { header: true });
+        const filteredData = results.data.filter(filterFunction);
+        const coordinates = filteredData.map((row) => new google.maps.LatLng(row.lat, row.lng));
+
+        heatmap.setData(coordinates);
+      });
   }
 
  function changeGradient() {
