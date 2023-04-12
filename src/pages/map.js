@@ -90,8 +90,8 @@ export default function MapPage() {
       csvData,
       apiKey,
       filterFunction
-    console.log("Coordinates length:", coordinates.length); 
     );
+    console.log("Coordinates length:", coordinates.length); 
 
     if (heatmap) {
       heatmap.setMap(null);
