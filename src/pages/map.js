@@ -159,14 +159,13 @@ export default function MapPage() {
 
   }
 
- function filterByWeatherAndDay(data) {
-  const allowedWeather = ['Clear', 'Rain', 'Cloudy', 'Sleet / HA'];
+function filterByWeatherAndDay(data) {
+  const allowedWeather = ['Rain', 'Clear', 'Cloudy', 'Sleet / HA'];
   const allowedDay = ['DayLight', 'Dark', 'Dusk', 'Dawn', 'Dark-Lighted', 'Dark-Not Lighted'];
   const result = allowedWeather.includes(data.Weather) && allowedDay.includes(data.Day);
   console.log('WeatherAndDay filter:', data, result);
   return result;
 }
-
   function switchToVehicleCollisionData() {
     switchData(filterByVehicleCollision);
   }
