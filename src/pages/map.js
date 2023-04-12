@@ -1,18 +1,18 @@
-import React, { useRef, useEffect, useState } from 'react';
-import Layout from '../components/Layout/Layout';
-import { Loader } from '@googlemaps/js-api-loader';
-import Papa from 'papaparse';
+import React, { useRef, useEffect, useState } from "react";
+import Layout from "../components/Layout/Layout";
+import { Loader } from "@googlemaps/js-api-loader";
+import Papa from "papaparse";
 
 const mapContainerStyle = {
-  width: '100%',
-  height: '100vh',
+  width: "100%",
+  height: "100vh",
 };
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const apiKey = 'AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8';
+const apiKey = "AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8";
 
 async function getLatLngFromStreetName(streetName, apiKey) {
   const response = await fetch(
@@ -21,17 +21,19 @@ async function getLatLngFromStreetName(streetName, apiKey) {
     )}&key=${apiKey}`
   );
   const data = await response.json();
-  if (data.status === 'OK' && data.results.length > 0) {
+  if (data.status === "OK" && data.results.length > 0) {
     const location = data.results[0].geometry.location;
     return new google.maps.LatLng(location.lat, location.lng);
   } else {
-    throw new Error('Failed to geocode street name');
+    throw new Error("Failed to geocode street name");
   }
 }
 
 async function parseAndGeocodeCsv(csvData, apiKey, filterFunction) {
   const results = Papa.parse(csvData, { header: true });
-  const nonEmptyRows = results.data.filter(row => row.streetName.trim() !== '');
+  const nonEmptyRows = results.data.filter(
+    (row) => row.streetName.trim() !== ""
+  );
   const filteredRows = nonEmptyRows.filter(filterFunction);
   const coordinates = [];
 
@@ -40,7 +42,10 @@ async function parseAndGeocodeCsv(csvData, apiKey, filterFunction) {
       const latLng = await getLatLngFromStreetName(row.streetName, apiKey);
       coordinates.push(latLng);
     } catch (error) {
-      console.error(`Failed to geocode street name "${row.streetName}":`, error);
+      console.error(
+        `Failed to geocode street name "${row.streetName}":`,
+        error
+      );
     }
     await sleep(200); // Adjust the sleep time as needed (in milliseconds)
   }
@@ -49,9 +54,9 @@ async function parseAndGeocodeCsv(csvData, apiKey, filterFunction) {
 }
 
 function createCustomGradient(colors) {
-  const gradient = colors.map(color => `rgba(${color.join(',')}, 0)`).concat(
-    colors.map(color => `rgba(${color.join(',')}, 1)`)
-  );
+  const gradient = colors
+    .map((color) => `rgba(${color.join(",")}, 0)`)
+    .concat(colors.map((color) => `rgba(${color.join(",")}, 1)`));
   return gradient;
 }
 
@@ -63,15 +68,15 @@ export default function MapPage() {
   useEffect(() => {
     const loader = new Loader({
       apiKey: apiKey,
-      version: 'weekly',
-      libraries: ['visualization'],
+      version: "weekly",
+      libraries: ["visualization"],
     });
 
     loader.load().then(() => {
       const loadedMap = new google.maps.Map(mapRef.current, {
         zoom: 13,
         center: { lat: 32.248814, lng: -110.987419 },
-        mapTypeId: 'satellite',
+        mapTypeId: "satellite",
       });
 
       setMap(loadedMap);
@@ -79,9 +84,13 @@ export default function MapPage() {
   }, []);
 
   async function loadHeatmapData(filterFunction, gradientColors) {
-    const csvResponse = await fetch('/CSV_TIME.csv');
+    const csvResponse = await fetch("/CSV_TIME.csv");
     const csvData = await csvResponse.text();
-    const coordinates = await parseAndGeocodeCsv(csvData, apiKey, filterFunction);
+    const coordinates = await parseAndGeocodeCsv(
+      csvData,
+      apiKey,
+      filterFunction
+    );
 
     if (heatmap) {
       heatmap.setMap(null);
@@ -90,26 +99,36 @@ export default function MapPage() {
     const newHeatmap = new google.maps.visualization.HeatmapLayer({
       data: coordinates,
       map,
-      gradient: createCustomGradient(gradientColors),
+      gradient: gradientColors ? createCustomGradient(gradientColors) : null,
     });
 
     setHeatmap(newHeatmap);
   }
 
   function filterByVehicleCollision(data) {
-    const allowedTypes = ['Vehicle / Vehicle'];
-    const vehicleCollisionData = data.vehiclecollision || data.vehicleCollision ||    '';
+    const allowedTypes = ["Vehicle / Vehicle"];
+    const vehicleCollisionData =
+      data.vehiclecollision || data.vehicleCollision || "";
 
-    const result = allowedTypes.includes(vehicleCollisionData.trim());
-    console.log('VehicleCollision filter:', data, result);
+    const result = allowedTypes.includes(vehicleCollisionCollisionData.trim());
+    console.log("VehicleCollision filter:", data, result);
     return result;
   }
 
   function filterByWeatherAndDay(data) {
-    const allowedWeather = ['Rain', 'Clear', 'Cloudy', 'Sleet / HA'];
-    const allowedDay = ['DayLight', 'Dark', 'Dusk', 'Dawn', 'Dark-Lighted', 'Dark-Not Lighted'];
-    const result = allowedWeather.includes(data.Weather.trim()) && allowedDay.includes(data.Day.trim());
-    console.log('WeatherAndDay filter:', data, result);
+    const allowedWeather = ["Rain", "Clear", "Cloudy", "Sleet / HA"];
+    const allowedDay = [
+      "DayLight",
+      "Dark",
+      "Dusk",
+      "Dawn",
+      "Dark-Lighted",
+      "Dark-Not Lighted",
+    ];
+    const result =
+      allowedWeather.includes(data.Weather.trim()) &&
+      allowedDay.includes(data.Day.trim());
+    console.log("WeatherAndDay filter:", data, result);
     return result;
   }
 
@@ -141,40 +160,22 @@ export default function MapPage() {
     ]);
   }
 
-  return (
-    <Layout>
-      <button id="switch-to-vehicle-collision-data" onClick={switchToVehicleCollisionData}>
-        Switch to Vehicle Collision Data
-      </button>
-      <button id="switch-to-weather-and-day-data" onClick={switchToWeatherAndDayData}>
-        Switch to Weather and Day Data
-      </button>
-      <div ref={mapRef} style={mapContainerStyle} />
-    </Layout>
-  );
-}
   function switchToOriginalData() {
-    switchData(() => true); // Pass a function that always returns true to include all data points
+    loadHeatmapData(() => true); // Pass a function that always returns true to include all data points
   }
 
   return (
     <Layout>
-      <button id="toggle-heatmap" onClick={toggleHeatmap}>
-        Toggle Heatmap
-      </button>
-      <button id="change-gradient" onClick={changeGradient}>
-        Change Gradient
-      </button>
-      <button id="change-opacity" onClick={changeOpacity}>
-        Change Opacity
-      </button>
-      <button id="change-radius" onClick={changeRadius}>
-        Change Radius
-      </button>
-      <button id="switch-to-vehicle-collision-data" onClick={switchToVehicleCollisionData}>
+      <button
+        id="switch-to-vehicle-collision-data"
+        onClick={switchToVehicleCollisionData}
+      >
         Switch to Vehicle Collision Data
       </button>
-      <button id="switch-to-weather-and-day-data" onClick={switchToWeatherAndDayData}>
+      <button
+        id="switch-to-weather-and-day-data"
+        onClick={switchToWeatherAndDayData}
+      >
         Switch to Weather and Day Data
       </button>
       <button id="switch-to-original-data" onClick={switchToOriginalData}>
@@ -184,4 +185,3 @@ export default function MapPage() {
     </Layout>
   );
 }
-
