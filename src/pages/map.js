@@ -90,6 +90,7 @@ export default function MapPage() {
       csvData,
       apiKey,
       filterFunction
+    console.log("Coordinates length:", coordinates.length); 
     );
 
     if (heatmap) {
@@ -132,19 +133,19 @@ export default function MapPage() {
     return result;
   }
 
-  function switchToVehicleCollisionData() {
-    loadHeatmapData(filterByvehicleCollision, [
-      [0, 255, 255],
-      [0, 191, 255],
-      [0, 127, 255],
-      [0, 63, 255],
-      [0, 0, 255],
-      [0, 0, 223],
-      [0, 0, 191],
-      [0, 0, 159],
-      [0, 0, 127],
-    ]);
-  }
+ function switchToVehicleCollisionData() {
+  loadHeatmapData(filterByVehicleCollision, [
+    [0, 255, 255],
+    [0, 191, 255],
+    [0, 127, 255],
+    [0, 63, 255],
+    [0, 0, 255],
+    [0, 0, 223],
+    [0, 0, 191],
+    [0, 0, 159],
+    [0, 0, 127],
+  ]);
+}
 
   function switchToWeatherAndDayData() {
     loadHeatmapData(filterByWeatherAndDay, [
