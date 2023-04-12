@@ -46,6 +46,7 @@ async function parseAndGeocodeCsv(csvData, apiKey) {
 
   return coordinates;
 }
+
 export default function MapPage() {
   const mapRef = useRef();
   const [map, setMap] = useState(null);
@@ -53,7 +54,7 @@ export default function MapPage() {
 
   useEffect(() => {
     const loader = new Loader({
-      apiKey: apiKey, // Replace with your API key
+      apiKey: apiKey,
       version: 'weekly',
       libraries: ['visualization'],
     });
@@ -115,7 +116,7 @@ export default function MapPage() {
     heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
   }
 
-    async function switchData(filterFunction) {
+  async function switchData(filterFunction) {
     const response = await fetch('/CSV_TIME.csv');
     const csvData = await response.text();
     const results = Papa.parse(csvData, { header: true });
@@ -123,42 +124,33 @@ export default function MapPage() {
     const coordinates = [];
 
     for (const row of filteredData) {
-    try {
-      const latLng = await getLatLngFromStreetName(row.streetName, apiKey);
-      coordinates.push(latLng);
-    } catch (error) {
-      console.error(`Failed to geocode street name "${row.streetName}":`, error);
+      try {
+        const latLng = await getLatLngFromStreetName(row.streetName, apiKey);
+        coordinates.push(latLng);
+      } catch (error) {
+        console.error(`Failed to geocode street name "${row.streetName}":`, error);
+      }
+      await sleep(200); // Adjust the sleep time as needed (in milliseconds)
     }
-    await sleep(200); // Adjust the sleep time as needed (in milliseconds)
-  }
-  
-  console.log('Filtered data:', filteredData, 'Coordinates:', coordinates);
 
-  heatmap.setData(coordinates);
-}
-function filterByVehicleCollision(data) {
-  const allowedTypes = ['Vehicle / Vehicle'];
-  const result = allowedTypes.includes(data.vehiclecollision);
-  console.log('VehicleCollision filter:', data, result);
-  return result;
-}
+    console.log('Filtered data:', filteredData, 'Coordinates:', coordinates);
 
-    return allowedTypes.includes(data.vehicleCollision);
+    heatmap.setData(coordinates);
   }
 
- function filterByWeatherAndDay(data) {
-  const allowedWeather = ['Rain', 'Clear', 'Cloudy', 'Sleet / HA'];
-  const allowedDay = ['DayLight', 'Dark', 'Dusk', 'Dawn', 'Dark-Lighted', 'Dark-Not Lighted'];
-  const result = allowedWeather.includes(data.weather) && allowedDay.includes(data.day);
-  console.log('WeatherAndDay filter:', data, result);
-  return result;
-
-
-    return allowedWeather.includes(data.Weather) && allowedDay.includes(data.Day);
+  function filterByVehicleCollision(data) {
+    const allowedTypes = ['Vehicle / Vehicle'];
+    const result = allowedTypes.includes(data.vehiclecollision);
+    console.log('VehicleCollision filter:', data, result);
+    return result;
   }
-   async function updateHeatmapData(filterFunction) {
-      const coordinates = await switchData(filterFunction, csvDataRows, apiKey);
-      heatmap.setData(coordinates);
+
+  function filterByWeatherAndDay(data) {
+    const allowedWeather = ['Rain', 'Clear', 'Cloudy', 'Sleet / HA'];
+    const allowedDay = ['DayLight', 'Dark', 'Dusk', 'Dawn', 'Dark-Lighted', 'Dark-Not Lighted'];
+    const result = allowedWeather.includes(data.weather) && allowedDay.includes(data.day);
+    console.log('WeatherAndDay filter:', data, result);
+    return result;
   }
 
   function switchToVehicleCollisionData() {
