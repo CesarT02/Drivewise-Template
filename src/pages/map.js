@@ -29,12 +29,13 @@ async function getLatLngFromStreetName(streetName, apiKey) {
   }
 }
 
-async function parseAndGeocodeCsv(csvData, apiKey) {
+async function parseAndGeocodeCsv(csvData, apiKey, filterFunction) {
   const results = Papa.parse(csvData, { header: true });
   const nonEmptyRows = results.data.filter(row => row.streetName.trim() !== '');
+  const filteredRows = nonEmptyRows.filter(filterFunction);
   const coordinates = [];
 
-  for (const row of nonEmptyRows) {
+  for (const row of filteredRows) {
     try {
       const latLng = await getLatLngFromStreetName(row.streetName, apiKey);
       coordinates.push(latLng);
@@ -45,6 +46,13 @@ async function parseAndGeocodeCsv(csvData, apiKey) {
   }
 
   return coordinates;
+}
+
+function createCustomGradient(colors) {
+  const gradient = colors.map(color => `rgba(${color.join(',')}, 0)`).concat(
+    colors.map(color => `rgba(${color.join(',')}, 1)`)
+  );
+  return gradient;
 }
 
 export default function MapPage() {
@@ -66,113 +74,87 @@ export default function MapPage() {
         mapTypeId: 'satellite',
       });
 
-      fetch('/CSV_TIME.csv')
-        .then((response) => response.text())
-        .then(async (csvData) => {
-          const coordinates = await parseAndGeocodeCsv(csvData, apiKey);
-          const loadedHeatmap = new google.maps.visualization.HeatmapLayer({
-            data: coordinates,
-            map: loadedMap,
-          });
-
-          setMap(loadedMap);
-          setHeatmap(loadedHeatmap);
-        });
+      setMap(loadedMap);
     });
   }, []);
 
-  function toggleHeatmap() {
+  async function loadHeatmapData(filterFunction, gradientColors) {
+    const csvResponse = await fetch('/CSV_TIME.csv');
+    const csvData = await csvResponse.text();
+    const coordinates = await parseAndGeocodeCsv(csvData, apiKey, filterFunction);
+
     if (heatmap) {
-      heatmap.setMap(heatmap.getMap() ? null : map);
+      heatmap.setMap(null);
     }
+
+    const newHeatmap = new google.maps.visualization.HeatmapLayer({
+      data: coordinates,
+      map,
+      gradient: createCustomGradient(gradientColors),
+    });
+
+    setHeatmap(newHeatmap);
   }
-
-  function changeGradient() {
-    const gradient = [
-      'rgba(0, 255, 255, 0)',
-      'rgba(0, 255, 255, 1)',
-      'rgba(0, 191, 255, 1)',
-      'rgba(0, 127, 255, 1)',
-      'rgba(0, 63, 255, 1)',
-      'rgba(0, 0, 255, 1)',
-      'rgba(0, 0, 223, 1)',
-      'rgba(0, 0, 191, 1)',
-      'rgba(0, 0, 159, 1)',
-      'rgba(0, 0, 127, 1)',
-      'rgba(63, 0, 91, 1)',
-      'rgba(127, 0, 63, 1)',
-      'rgba(191, 0, 31, 1)',
-      'rgba(255, 0, 0, 1)',
-    ];
-
-    heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
-  }
-
-  function changeRadius() {
-    heatmap.set('radius', heatmap.get('radius') ? null : 20);
-  }
-
-  function changeOpacity() {
-    heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
-  }
-
- async function switchData(filterFunction) {
-  const response = await fetch('/CSV_TIME.csv');
-  const csvData = await response.text();
-  const results = Papa.parse(csvData, { header: true });
-  
-  // Trim values and headers
-  const trimmedHeaders = results.meta.fields.map(field => field.trim());
-  const trimmedData = results.data.map(row => {
-    const newRow = {};
-    for (const key of Object.keys(row)) {
-      newRow[key.trim()] = row[key].trim();
-    }
-    return newRow;
-  });
-
-  const filteredData = trimmedData.filter(filterFunction);
-  const coordinates = [];
-
-  for (const row of filteredData) {
-    try {
-      const latLng = await getLatLngFromStreetName(row.streetName, apiKey);
-      coordinates.push(latLng);
-    } catch (error) {
-      console.error(`Failed to geocode street name "${row.streetName}":`, error);
-    }
-    await sleep(200); // Adjust the sleep time as needed (in milliseconds)
-  }
-
-  console.log('Filtered data:', filteredData, 'Coordinates:', coordinates);
-
-  heatmap.setData(coordinates);
-}
 
   function filterByVehicleCollision(data) {
-  const allowedTypes = ['Vehicle / Vehicle'];
-  const vehicleCollisionData = data.vehiclecollision || data.vehicleCollision || '';
+    const allowedTypes = ['Vehicle / Vehicle'];
+    const vehicleCollisionData = data.vehiclecollision || data.vehicleCollision ||    '';
 
-  const result = allowedTypes.includes(vehicleCollisionData.trim());
-  console.log('VehicleCollision filter:', data, result);
-  return result;
-
+    const result = allowedTypes.includes(vehicleCollisionData.trim());
+    console.log('VehicleCollision filter:', data, result);
+    return result;
   }
 
-function filterByWeatherAndDay(data) {
-  const allowedWeather = ['Rain', 'Clear', 'Cloudy', 'Sleet / HA'];
-  const allowedDay = ['DayLight', 'Dark', 'Dusk', 'Dawn', 'Dark-Lighted', 'Dark-Not Lighted'];
-  const result = allowedWeather.includes(data.Weather.trim()) && allowedDay.includes(data.Day.trim());
-  console.log('WeatherAndDay filter:', data, result);
-  return result;
-}
+  function filterByWeatherAndDay(data) {
+    const allowedWeather = ['Rain', 'Clear', 'Cloudy', 'Sleet / HA'];
+    const allowedDay = ['DayLight', 'Dark', 'Dusk', 'Dawn', 'Dark-Lighted', 'Dark-Not Lighted'];
+    const result = allowedWeather.includes(data.Weather.trim()) && allowedDay.includes(data.Day.trim());
+    console.log('WeatherAndDay filter:', data, result);
+    return result;
+  }
 
   function switchToVehicleCollisionData() {
-    switchData(filterByVehicleCollision);
+    loadHeatmapData(filterByVehicleCollision, [
+      [0, 255, 255],
+      [0, 191, 255],
+      [0, 127, 255],
+      [0, 63, 255],
+      [0, 0, 255],
+      [0, 0, 223],
+      [0, 0, 191],
+      [0, 0, 159],
+      [0, 0, 127],
+    ]);
   }
 
   function switchToWeatherAndDayData() {
-    switchData(filterByWeatherAndDay);
+    loadHeatmapData(filterByWeatherAndDay, [
+      [255, 255, 0],
+      [255, 191, 0],
+      [255, 127, 0],
+      [255, 63, 0],
+      [255, 0, 0],
+      [223, 0, 0],
+      [191, 0, 0],
+      [159, 0, 0],
+      [127, 0, 0],
+    ]);
+  }
+
+  return (
+    <Layout>
+      <button id="switch-to-vehicle-collision-data" onClick={switchToVehicleCollisionData}>
+        Switch to Vehicle Collision Data
+      </button>
+      <button id="switch-to-weather-and-day-data" onClick={switchToWeatherAndDayData}>
+        Switch to Weather and Day Data
+      </button>
+      <div ref={mapRef} style={mapContainerStyle} />
+    </Layout>
+  );
+}
+  function switchToOriginalData() {
+    switchData(() => true); // Pass a function that always returns true to include all data points
   }
 
   return (
@@ -195,7 +177,11 @@ function filterByWeatherAndDay(data) {
       <button id="switch-to-weather-and-day-data" onClick={switchToWeatherAndDayData}>
         Switch to Weather and Day Data
       </button>
+      <button id="switch-to-original-data" onClick={switchToOriginalData}>
+        Switch to Original Data
+      </button>
       <div ref={mapRef} style={mapContainerStyle} />
     </Layout>
   );
 }
+
