@@ -29,10 +29,15 @@ async function getLatLngFromStreetName(streetName, apiKey) {
   }
 }
 
-function createInfoWindow(map, marker, content) {
+function createInfoWindow(map, marker, content, rowData) {
   const infoWindow = new google.maps.InfoWindow({
     content: content,
   });
+
+  marker.vehicleCollision =
+    rowData.vehicleCollision || rowData.vehiclecollision;
+  marker.weather = rowData.Weather;
+  marker.day = rowData.Day;
 
   marker.addListener("click", () => {
     infoWindow.open(map, marker);
@@ -81,7 +86,7 @@ async function parseAndGeocodeCsv(csvData, apiKey, filters = {}) {
         </div>
       `;
 
-      createInfoWindow(map, marker, content);
+      createInfoWindow(map, marker, content, row);
       infoWindows.push({ marker, content });
     } catch (error) {
       console.error(
@@ -100,10 +105,11 @@ export default function MapPage() {
   const [map, setMap] = useState(null);
   const [heatmap, setHeatmap] = useState(null);
   const [markers, setMarkers] = useState([]);
-
+  const [visualizationMode, setVisualizationMode] = useState("heatmap");
   const [dayFilter, setDayFilter] = useState(null);
   const [weatherFilter, setWeatherFilter] = useState(null);
   const [vehicleCollisionFilter, setVehicleCollisionFilter] = useState(null);
+
   useEffect(() => {
     const loader = new Loader({
       apiKey: apiKey,
@@ -116,7 +122,6 @@ export default function MapPage() {
         center: { lat: 32.248814, lng: -110.987419 },
         mapTypeId: "satellite",
       });
-
       fetch("/CSV_TIME.csv")
         .then((response) => response.text())
         .then(async (csvData) => {
@@ -150,7 +155,6 @@ export default function MapPage() {
       apiKey,
       filters
     );
-
     // Remove previous markers
     markers.forEach((marker) => marker.setMap(null));
 
@@ -161,46 +165,25 @@ export default function MapPage() {
     heatmap.setData(coordinates);
   }
 
-  function toggleHeatmap() {
-  if (heatmap && map) {
-    heatmap.setMap(heatmap.getMap() ? null : map);
-  }
-}   
-
-
-function toggleMarkers() {
-  if (markers.length > 0 && map) {
-    const nextMap = markers[0].getMap() ? null : map;
-    markers.forEach((marker) => marker.setMap(nextMap));
-  }
-}
-
-  function changeGradient() {
-    const gradient = [
-      "rgba(0, 255, 255, 0)",
-      "rgba(0, 255, 255, 1)",
-      "rgba(0, 191, 255, 1)",
-      "rgba(0, 127, 255, 1)",
-      "rgba(0, 63, 255, 1)",
-      "rgba(0, 0, 255, 1)",
-      "rgba(0, 0, 223, 1)",
-      "rgba(0, 0, 191, 1)",
-      "rgba(0, 0, 159, 1)",
-      "rgba(0, 0, 127, 1)",
-      "rgba(63, 0, 91, 1)",
-      "rgba(127, 0, 63, 1)",
-      "rgba(191, 0, 31, 1)",
-      "rgba(255, 0, 0, 1)",
-    ];
-    heatmap.set("gradient", heatmap.get("gradient") ? null : gradient);
-  }
-
-  function changeRadius() {
-    heatmap.set("radius", heatmap.get("radius") ? null : 20);
-  }
-
-  function changeOpacity() {
-    heatmap.set("opacity", heatmap.get("opacity") ? null : 0.2);
+  function updateVisualizationMode(mode) {
+    if (mode === "heatmap") {
+      heatmap.setMap(map);
+      markers.forEach((marker) => marker.setMap(null));
+    } else if (
+      mode === "vehicleCollision" ||
+      mode === "weather" ||
+      mode === "day"
+    ) {
+      heatmap.setMap(null);
+      markers.forEach((marker) => {
+        if (marker[mode] === filters[mode]) {
+          marker.setMap(map);
+        } else {
+          marker.setMap(null);
+        }
+      });
+    }
+    setVisualizationMode(mode);
   }
 
   return (
@@ -230,21 +213,16 @@ function toggleMarkers() {
         />
       </div>
       <button onClick={applyFilters}>Apply Filters</button>
-      <button id="toggle-heatmap" onClick={toggleHeatmap}>
-        Toggle Heatmap
+      <button onClick={() => updateVisualizationMode("heatmap")}>
+        Heatmap
       </button>
-      <button id="toggle-markers" onClick={toggleMarkers}>
-        Toggle Markers
+      <button onClick={() => updateVisualizationMode("vehicleCollision")}>
+        Vehicle Collisions
       </button>
-      <button id="change-gradient" onClick={changeGradient}>
-        Change Gradient
+      <button onClick={() => updateVisualizationMode("weather")}>
+        Weather
       </button>
-      <button id="change-opacity" onClick={changeOpacity}>
-        Change Opacity
-      </button>
-      <button id="change-radius" onClick={changeRadius}>
-        Change Radius
-      </button>
+      <button onClick={() => updateVisualizationMode("day")}>Day</button>
       <div ref={mapRef} style={mapContainerStyle} />
     </Layout>
   );
