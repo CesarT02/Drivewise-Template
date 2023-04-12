@@ -116,27 +116,38 @@ export default function MapPage() {
     heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
   }
 
-  async function switchData(filterFunction) {
-    const response = await fetch('/CSV_TIME.csv');
-    const csvData = await response.text();
-    const results = Papa.parse(csvData, { header: true });
-    const filteredData = results.data.filter(filterFunction);
-    const coordinates = [];
-
-    for (const row of filteredData) {
-      try {
-        const latLng = await getLatLngFromStreetName(row.streetName, apiKey);
-        coordinates.push(latLng);
-      } catch (error) {
-        console.error(`Failed to geocode street name "${row.streetName}":`, error);
-      }
-      await sleep(200); // Adjust the sleep time as needed (in milliseconds)
+ async function switchData(filterFunction) {
+  const response = await fetch('/CSV_TIME.csv');
+  const csvData = await response.text();
+  const results = Papa.parse(csvData, { header: true });
+  
+  // Trim values and headers
+  const trimmedHeaders = results.meta.fields.map(field => field.trim());
+  const trimmedData = results.data.map(row => {
+    const newRow = {};
+    for (const key of Object.keys(row)) {
+      newRow[key.trim()] = row[key].trim();
     }
+    return newRow;
+  });
 
-    console.log('Filtered data:', filteredData, 'Coordinates:', coordinates);
+  const filteredData = trimmedData.filter(filterFunction);
+  const coordinates = [];
 
-    heatmap.setData(coordinates);
+  for (const row of filteredData) {
+    try {
+      const latLng = await getLatLngFromStreetName(row.streetName, apiKey);
+      coordinates.push(latLng);
+    } catch (error) {
+      console.error(`Failed to geocode street name "${row.streetName}":`, error);
+    }
+    await sleep(200); // Adjust the sleep time as needed (in milliseconds)
   }
+
+  console.log('Filtered data:', filteredData, 'Coordinates:', coordinates);
+
+  heatmap.setData(coordinates);
+}
 
   function filterByVehicleCollision(data) {
   const allowedTypes = ['Vehicle / Vehicle'];
