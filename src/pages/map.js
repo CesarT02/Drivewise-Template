@@ -145,7 +145,7 @@ export default function MapPage() {
   const result = allowedTypes.includes(vehicleCollisionData.trim());
   console.log('VehicleCollision filter:', data, result);
   return result;
-}
+
   }
 
   function filterByWeatherAndDay(data) {
