@@ -110,7 +110,7 @@ export default function MapPage() {
     const vehicleCollisionData =
       data.vehiclecollision || data.vehicleCollision || "";
 
-    const result = allowedTypes.includes(vehicleCollisionCollisionData.trim());
+    const result = allowedTypes.includes(vehicleCollisionData.trim());
     console.log("VehicleCollision filter:", data, result);
     return result;
   }
@@ -133,7 +133,7 @@ export default function MapPage() {
   }
 
   function switchToVehicleCollisionData() {
-    loadHeatmapData(filterByVehicleCollision, [
+    loadHeatmapData(filterByvehicleCollision, [
       [0, 255, 255],
       [0, 191, 255],
       [0, 127, 255],
