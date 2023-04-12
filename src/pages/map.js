@@ -162,15 +162,17 @@ export default function MapPage() {
   }
 
   function toggleHeatmap() {
-    if (heatmap) {
-      heatmap.setMap(heatmap.getMap() ? null : map);
-    }
+  if (heatmap && map) {
+    heatmap.setMap(heatmap.getMap() ? null : map);
   }
 
-  function toggleMarkers() {
+
+function toggleMarkers() {
+  if (markers.length > 0 && map) {
     const nextMap = markers[0].getMap() ? null : map;
     markers.forEach((marker) => marker.setMap(nextMap));
   }
+}
 
   function changeGradient() {
     const gradient = [
