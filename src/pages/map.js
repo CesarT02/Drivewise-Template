@@ -165,6 +165,7 @@ export default function MapPage() {
   if (heatmap && map) {
     heatmap.setMap(heatmap.getMap() ? null : map);
   }
+}   
 
 
 function toggleMarkers() {
