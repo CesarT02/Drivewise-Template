@@ -187,3 +187,4 @@ export default function MapPage() {
       <div ref={mapRef} style={mapContainerStyle} />
     </Layout>
   );
+}
