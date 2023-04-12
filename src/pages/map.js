@@ -139,10 +139,13 @@ export default function MapPage() {
   }
 
   function filterByVehicleCollision(data) {
-    const allowedTypes = ['Vehicle / Vehicle'];
-    const result = allowedTypes.includes(data.vehiclecollision);
-    console.log('VehicleCollision filter:', data, result);
-    return result;
+  const allowedTypes = ['Vehicle / Vehicle'];
+  const vehicleCollisionData = data.vehiclecollision || data.vehicleCollision || '';
+
+  const result = allowedTypes.includes(vehicleCollisionData.trim());
+  console.log('VehicleCollision filter:', data, result);
+  return result;
+}
   }
 
   function filterByWeatherAndDay(data) {
