@@ -123,29 +123,36 @@ export default function MapPage() {
     const coordinates = [];
 
     for (const row of filteredData) {
-      try {
-        const latLng = await getLatLngFromStreetName(row.streetName, apiKey);
-        coordinates.push(latLng);
-      } catch (error) {
-        console.error(`Failed to geocode street name "${row.streetName}":`, error);
-      }
-      await sleep(200); // Adjust the sleep time as needed (in milliseconds)
+    try {
+      const latLng = await getLatLngFromStreetName(row.streetName, apiKey);
+      coordinates.push(latLng);
+    } catch (error) {
+      console.error(`Failed to geocode street name "${row.streetName}":`, error);
     }
-
-    heatmap.setData(coordinates);
+    await sleep(200); // Adjust the sleep time as needed (in milliseconds)
   }
-  function filterByVehicleCollision(data) {
-    const allowedTypes = [
-      'Vehicle / Vehicle',
-     
-    ];
+  
+  console.log('Filtered data:', filteredData, 'Coordinates:', coordinates);
+
+  heatmap.setData(coordinates);
+}
+function filterByVehicleCollision(data) {
+  const allowedTypes = ['Vehicle / Vehicle'];
+  const result = allowedTypes.includes(data.vehiclecollision);
+  console.log('VehicleCollision filter:', data, result);
+  return result;
+}
 
     return allowedTypes.includes(data.vehicleCollision);
   }
 
-  function filterByWeatherAndDay(data) {
-    const allowedWeather = ['Rain', 'Clear', 'Cloudy', 'Sleet / HA'];
-    const allowedDay = ['DayLight', 'Dark', 'Dusk', 'Dawn', 'Dark-Lighted', 'Dark-Not Lighted'];
+ function filterByWeatherAndDay(data) {
+  const allowedWeather = ['Rain', 'Clear', 'Cloudy', 'Sleet / HA'];
+  const allowedDay = ['DayLight', 'Dark', 'Dusk', 'Dawn', 'Dark-Lighted', 'Dark-Not Lighted'];
+  const result = allowedWeather.includes(data.weather) && allowedDay.includes(data.day);
+  console.log('WeatherAndDay filter:', data, result);
+  return result;
+
 
     return allowedWeather.includes(data.Weather) && allowedDay.includes(data.Day);
   }
