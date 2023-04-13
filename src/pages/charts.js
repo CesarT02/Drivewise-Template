@@ -33,17 +33,21 @@ export default function ChartsPage() {
         <div className="flex flex-wrap justify-center">
           {[chart1, chart2, chart3].map((image, index) => (
             <div className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4" key={index}>
-              <img
-                src={image}
-                alt={`Image ${index + 1}`}
-                style={{
-                  width: '100%',
-                  transform: hoveredImage === index ? 'scale(3.5)' : 'scale(1)',
-                  transition: 'transform 0.3s ease-in-out',
-                }}
+              <div
+                className="relative overflow-hidden"
+                style={{ paddingBottom: '100%' }}
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
-              />
+              >
+                <img
+                  src={image}
+                  alt={`Image ${index + 1}`}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out"
+                  style={{
+                    transform: hoveredImage === index ? 'scale(3.5)' : 'scale(1)',
+                  }}
+                />
+              </div>
               <p className="text-center mt-2">Text under image {index + 1}</p>
             </div>
           ))}
@@ -52,5 +56,3 @@ export default function ChartsPage() {
     </Layout>
   );
 }
-
-
