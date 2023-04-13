@@ -37,8 +37,8 @@ export default function ChartsPage() {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    max-width: calc(100vw - 2rem);
-    max-height: calc(100vh - 2rem);
+    max-width: calc(80vw - 2rem);
+    max-height: calc(80vh - 2rem);
     object-fit: contain;
     background-color: rgba(255, 255, 255, 0.95);
     padding: 1rem;
