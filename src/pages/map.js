@@ -91,7 +91,14 @@ export default function MapPage() {
 async function loadHeatmapData(filterFunction, gradientColors) {
   const excelResponse = await fetch("/Good_Excel.xlsx");
   const excelBlob = await excelResponse.blob();
-  const excelArrayBuffer = await new Response(excelBlob).arrayBuffer();
+
+  const excelArrayBuffer = await new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsArrayBuffer(excelBlob);
+  });
+
   const coordinates = await parseAndGeocodeExcel(
     excelArrayBuffer,
     apiKey,
