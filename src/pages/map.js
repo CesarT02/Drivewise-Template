@@ -23,6 +23,7 @@ async function getLatLngFromStreetName(streetName, apiKey) {
   const data = await response.json();
   if (data.status === "OK" && data.results.length > 0) {
     const location = data.results[0].geometry.location;
+    console.log("Location:", location);
     return new google.maps.LatLng(location.lat, location.lng);
   } else {
     throw new Error("Failed to geocode street name");
@@ -49,6 +50,7 @@ async function parseAndGeocodeExcel(excelArrayBuffer, apiKey, filterFunction) {
     try {
       const latLng = await getLatLngFromStreetName(row.StreetName, apiKey);
       coordinates.push(latLng);
+      console.log("LatLng:", latLng);
     } catch (error) {
       console.error(`Failed to geocode street name "${row.StreetName}":`, error);
     }
