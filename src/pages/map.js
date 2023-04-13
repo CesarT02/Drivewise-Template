@@ -106,32 +106,31 @@ export default function MapPage() {
     setHeatmap(newHeatmap);
   }
 
-  function filterByVehicleCollision(data) {
-    const allowedTypes = ["Vehicle / Vehicle"];
-    const vehicleCollisionData =
-      data.vehiclecollision || data.vehicleCollision || "";
+function filterByVehicleCollision(data) {
+  const allowedTypes = ["Vehicle/Vehicle"];
+  const vehicleCollisionData = data.Collision || "";
 
-    const result = allowedTypes.includes(vehicleCollisionData.trim());
-    console.log("VehicleCollision filter:", data, result);
-    return result;
-  }
+  const result = allowedTypes.includes(vehicleCollisionData.trim());
+  console.log("VehicleCollision filter:", data, result);
+  return result;
+}
 
-  function filterByWeatherAndDay(data) {
-    const allowedWeather = ["Rain", "Clear", "Cloudy", "Sleet / HA"];
-    const allowedDay = [
-      "DayLight",
-      "Dark",
-      "Dusk",
-      "Dawn",
-      "Dark-Lighted",
-      "Dark-Not Lighted",
-    ];
-    const result =
-      allowedWeather.includes(data.Weather.trim()) &&
-      allowedDay.includes(data.Day.trim());
-    console.log("WeatherAndDay filter:", data, result);
-    return result;
-  }
+function filterByWeatherAndDay(data) {
+  const allowedWeather = ["Rain", "Clear", "Cloudy", "Sleet / HA"];
+  const allowedDay = [
+    "DayLight",
+    "Dark",
+    "Dusk",
+    "Dawn",
+    "Dark-Lighted",
+    "Dark-Not Lighted",
+  ];
+  const result =
+    allowedWeather.includes(data.Weather.trim()) &&
+    allowedDay.includes(data.Day.trim());
+  console.log("WeatherAndDay filter:", data, result);
+  return result;
+}
 
  function switchToVehicleCollisionData() {
   loadHeatmapData(filterByVehicleCollision, [
