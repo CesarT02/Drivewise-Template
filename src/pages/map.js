@@ -54,6 +54,7 @@ async function parseAndGeocodeExcel(excelArrayBuffer, apiKey, filterFunction) {
     }
     await sleep(200); // Adjust the sleep time as needed (in milliseconds)
   }
+  console.log(coordinates);
 
   return coordinates;
 }
@@ -114,6 +115,7 @@ async function loadHeatmapData(filterFunction, gradientColors) {
     map,
     gradient: gradientColors ? createCustomGradient(gradientColors) : null,
   });
+  console.log(coordinates);
 
   setHeatmap(newHeatmap);
 }
