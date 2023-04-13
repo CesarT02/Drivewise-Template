@@ -19,7 +19,7 @@ export default function ChartsPage() {
     <Layout>
       <article className="space-y-2">
         <h2 className="text-xl font-bold underline">Charts</h2>
-        <p>Charts go here:</p>
+        
         <style jsx>
           <style jsx>{`
   .image-container {
