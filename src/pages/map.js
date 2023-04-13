@@ -32,8 +32,8 @@ async function getLatLngFromStreetName(streetName, apiKey) {
 async function parseAndGeocodeCsv(csvData, apiKey, filterFunction) {
   const results = Papa.parse(csvData, { header: true });
   const nonEmptyRows = results.data.filter(
-    (row) => row.streetName.trim() !== ""
-  );
+  (row) => row.StreetName.trim() !== ""
+);
   const filteredRows = nonEmptyRows.filter(filterFunction);
   const coordinates = [];
 
