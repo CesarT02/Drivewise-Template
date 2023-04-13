@@ -14,10 +14,10 @@ function sleep(ms) {
 
 const apiKey = "AIzaSyAuOhlWr5cxsZcvX6FSWA_mcEfGAGqE6u8";
 
-async function getLatLngFromStreetName(streetName, apiKey) {
+async function getLatLngFromStreetName(streetName, city, state, apiKey) {
   const response = await fetch(
     `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-      streetName
+      `${streetName}, ${city}, ${state}`
     )}&key=${apiKey}`
   );
   const data = await response.json();
@@ -46,9 +46,9 @@ async function parseAndGeocodeExcel(excelArrayBuffer, apiKey, filterFunction) {
   const filteredRows = nonEmptyRows.filter(filterFunction);
   const coordinates = [];
 
-  for (const row of filteredRows) {
+    for (const row of filteredRows) {
     try {
-      const latLng = await getLatLngFromStreetName(row.StreetName, apiKey);
+      const latLng = await getLatLngFromStreetName(row.StreetName, row.City, row.State, apiKey);
       coordinates.push(latLng);
       console.log("LatLng:", latLng);
     } catch (error) {
@@ -113,10 +113,12 @@ async function loadHeatmapData(filterFunction, gradientColors) {
   }
 
   const newHeatmap = new google.maps.visualization.HeatmapLayer({
-    data: coordinates,
-    map,
-    gradient: gradientColors ? createCustomGradient(gradientColors) : null,
-  });
+   data: coordinates,
+   map,
+   radius: 20,
+   opacity: 0.7,
+   gradient: gradientColors ? createCustomGradient(gradientColors) : null,
+ });
   console.log(coordinates);
 
   setHeatmap(newHeatmap);
@@ -161,7 +163,9 @@ function filterByWeatherAndDay(data) {
     [0, 0, 191],
     [0, 0, 159],
     [0, 0, 127],
-  ]);
+   ]).then(coordinates => {
+    console.log('VehicleCollision coordinates:', coordinates);
+  });
 }
 
   function switchToWeatherAndDayData() {
@@ -175,9 +179,10 @@ function filterByWeatherAndDay(data) {
       [191, 0, 0],
       [159, 0, 0],
       [127, 0, 0],
-    ]);
-  }
-
+    ]).then(coordinates => {
+    console.log('WeatherAndDay coordinates:', coordinates);
+  });
+}
   function switchToOriginalData() {
     loadHeatmapData(() => true); // Pass a function that always returns true to include all data points
   }
