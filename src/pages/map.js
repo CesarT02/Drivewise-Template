@@ -143,15 +143,20 @@ function filterByWeatherAndDay(data) {
     "Dark-Lighted",
     "Dark-Not Lighted",
   ];
-  const weather = data.Weather || "";
-  const day = data.Day || "";
+
+  if (allowedWeather.length === 0 && allowedDay.length === 0) {
+    return true;
+  }
+
+  const weather = (data.Weather || "").trim();
+  const day = (data.Day || "").trim();
   const result =
-    allowedWeather.includes(weather.trim()) &&
-    allowedDay.includes(day.trim());
+    (allowedWeather.length === 0 || allowedWeather.includes(weather)) &&
+    (allowedDay.length === 0 || allowedDay.includes(day));
+
   console.log("WeatherAndDay filter:", data, result);
   return result;
 }
-
  function switchToVehicleCollisionData() {
   loadHeatmapData(filterByVehicleCollision, [
     [0, 255, 255],
