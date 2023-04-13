@@ -143,17 +143,11 @@ function filterByWeatherAndDay(data) {
     "Dark-Lighted",
     "Dark-Not Lighted",
   ];
-
-  if (allowedWeather.length === 0 && allowedDay.length === 0) {
-    return true;
-  }
-
-  const weather = (data.Weather || "").trim();
-  const day = (data.Day || "").trim();
+  const weather = data.Weather.trim();
+  const day = data.Day.trim();
   const result =
-    (allowedWeather.length === 0 || allowedWeather.includes(weather)) &&
-    (allowedDay.length === 0 || allowedDay.includes(day));
-
+    allowedWeather.includes(weather) &&
+    allowedDay.includes(day);
   console.log("WeatherAndDay filter:", data, result);
   return result;
 }
