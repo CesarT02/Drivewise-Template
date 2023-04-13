@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import { Loader } from "@googlemaps/js-api-loader";
-import Papa from "papaparse";
+import XLSX from 'xlsx';
 
 const mapContainerStyle = {
   width: "100%",
@@ -29,23 +29,28 @@ async function getLatLngFromStreetName(streetName, apiKey) {
   }
 }
 
-async function parseAndGeocodeCsv(csvData, apiKey, filterFunction) {
-  const results = Papa.parse(csvData, { header: true });
-  const nonEmptyRows = results.data.filter(
-  (row) => row.StreetName.trim() !== ""
-);
+async function parseAndGeocodeExcel(excelArrayBuffer, apiKey, filterFunction) {
+  const workbook = XLSX.read(new Uint8Array(excelArrayBuffer), { type: 'array' });
+  const firstSheetName = workbook.SheetNames[0];
+  const worksheet = workbook.Sheets[firstSheetName];
+  const json = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+  const headers = json.shift();
+  const data = json.map(row => headers.reduce((acc, header, i) => {
+    acc[header] = row[i];
+    return acc;
+  }, {}));
+
+  const nonEmptyRows = data.filter((row) => row.StreetName.trim() !== '');
   const filteredRows = nonEmptyRows.filter(filterFunction);
   const coordinates = [];
 
   for (const row of filteredRows) {
     try {
-      const latLng = await getLatLngFromStreetName(row.streetName, apiKey);
+      const latLng = await getLatLngFromStreetName(row.StreetName, apiKey);
       coordinates.push(latLng);
     } catch (error) {
-      console.error(
-        `Failed to geocode street name "${row.streetName}":`,
-        error
-      );
+      console.error(`Failed to geocode street name "${row.StreetName}":`, error);
     }
     await sleep(200); // Adjust the sleep time as needed (in milliseconds)
   }
@@ -83,28 +88,27 @@ export default function MapPage() {
     });
   }, []);
 
-  async function loadHeatmapData(filterFunction, gradientColors) {
-    const csvResponse = await fetch("/Good_CSV.csv");
-    const csvData = await csvResponse.text();
-    const coordinates = await parseAndGeocodeCsv(
-      csvData,
-      apiKey,
-      filterFunction
-    );
-    console.log("Coordinates length:", coordinates.length); 
+async function loadHeatmapData(filterFunction, gradientColors) {
+  const excelResponse = await fetch("/Good_Excel.xlsx");
+  const excelArrayBuffer = await excelResponse.arrayBuffer();
+  const coordinates = await parseAndGeocodeExcel(
+    excelArrayBuffer,
+    apiKey,
+    filterFunction
+  );
 
-    if (heatmap) {
-      heatmap.setMap(null);
-    }
-
-    const newHeatmap = new google.maps.visualization.HeatmapLayer({
-      data: coordinates,
-      map,
-      gradient: gradientColors ? createCustomGradient(gradientColors) : null,
-    });
-
-    setHeatmap(newHeatmap);
+  if (heatmap) {
+    heatmap.setMap(null);
   }
+
+  const newHeatmap = new google.maps.visualization.HeatmapLayer({
+    data: coordinates,
+    map,
+    gradient: gradientColors ? createCustomGradient(gradientColors) : null,
+  });
+
+  setHeatmap(newHeatmap);
+}
 
 function filterByVehicleCollision(data) {
   const allowedTypes = ["Vehicle/Vehicle"];
