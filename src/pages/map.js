@@ -84,7 +84,7 @@ export default function MapPage() {
   }, []);
 
   async function loadHeatmapData(filterFunction, gradientColors) {
-    const csvResponse = await fetch("/CSV_TIME.csv");
+    const csvResponse = await fetch("/Good_CSV.csv");
     const csvData = await csvResponse.text();
     const coordinates = await parseAndGeocodeCsv(
       csvData,
