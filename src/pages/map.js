@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import { Loader } from "@googlemaps/js-api-loader";
-import XLSX from 'xlsx';
+import * as XLSX from 'xlsx';
 
 const mapContainerStyle = {
   width: "100%",
