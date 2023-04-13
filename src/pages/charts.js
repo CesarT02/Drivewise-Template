@@ -45,6 +45,7 @@ export default function ChartsPage() {
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-in-out"
                   style={{
                     transform: hoveredImage === index ? 'scale(3.5)' : 'scale(1)',
+                    transformOrigin: 'top left',
                   }}
                 />
               </div>
