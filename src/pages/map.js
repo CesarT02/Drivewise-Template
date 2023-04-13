@@ -134,15 +134,15 @@ function filterByVehicleCollision(data) {
 }
 
 function filterByWeatherAndDay(data) {
-  const allowedWeather = ["Rain", "Clear", "Cloudy", "Sleet / HA"];
+  const allowedWeather = ["CLEAR", "CLOUDY", "RAIN", "SLEET / HA"];
   const allowedDay = [
-    "DayLight",
-    "Dark",
-    "Dusk",
-    "Dawn",
-    "Dark-Lighted",
-    "Dark-Not Lighted",
-  ];
+  "DAYLIGHT",
+  "DARK",
+  "DUSK",
+  "DAWN",
+  "DARK-LIGHTED",
+  "DARK-NOT LIGHTED",
+];
   const weather = data.Weather ? data.Weather.trim() : '';
   const day = data.Day ? data.Day.trim() : '';
   const result =
