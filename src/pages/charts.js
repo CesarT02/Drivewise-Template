@@ -15,6 +15,12 @@ export function Head() {
 }
 
 export default function ChartsPage() {
+  const chartDescriptions = [
+    `Chart (Days of the week): When analyzing the data we found there to be some small trend patterns in the data, In this particular case we noticed there to be a trend in the day of the accidents reported. When looking into the data we notice that throughout the week. Mon-Sun There was an uptrend from the start of the week with a climax on fridays being the most active for accidents and diminishing down to Sunday and Monday.`,
+    `Chart (Time of day): Part of the project was also meant to help be more conscious of when to travel, so when taking a look at the times reported for these accidents we did find there was some standout times that more incidents were reported at. In this chart the frequency is displayed the data seems a bit skewed as times reported could’ve been rounded up or down with the reports. There are times of the day to be aware of and that's essentially rush hour, around 5pm-7pm seemed to be the most reported incidents time, drivers focused on avoiding accidents could find themselves a bit safer at the early morning hours from 4am-7am and 12pm-3:30pm seemed to be the safest of the afternoon time.`,
+    `Chart (Light conditions): When looking at the data, Most of the incidents reported were during daylight hours or largely in areas with some sort of street light, It was an interesting split as with traffic incidents reported in the time of day chart seemed to dwindle down after about 6:30PM, so to see such a large portion still reported in night conditions unexpected.With this we would advise drivers to use their own discretion when driving in different lighting conditions.`,
+  ];
+
   return (
     <Layout>
       <article className="space-y-2">
@@ -25,11 +31,9 @@ export default function ChartsPage() {
   .image-container {
     position: relative;
   }
-
   .image-container:hover .hovered-image {
     display: block;
   }
-
   .hovered-image {
     display: none;
     position: fixed;
@@ -48,6 +52,8 @@ export default function ChartsPage() {
 `}</style>
         </style>
         <div className="flex flex-wrap justify-center">
+          {[picture1, picture2, chart3].map((image, index)
+              <div className="flex flex-wrap justify-center">
           {[picture1, picture2, chart3].map((image, index) => (
             <div
               className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4"
@@ -66,6 +72,7 @@ export default function ChartsPage() {
                 />
               </div>
               <p className="text-center mt-2">Text under image {index + 1}</p>
+              <p className="text-justify text-sm mt-2">{chartDescriptions[index]}</p>
             </div>
           ))}
         </div>
