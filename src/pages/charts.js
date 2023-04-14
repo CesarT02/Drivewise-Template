@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
-import Picture1 from "../images/Picture1.png";
-import Picture2 from "../images/Picture2.png";
+import picture1 from "../images/Picture1.png";
+import picture2 from "../images/Picture2.png";
 import chart3 from "../images/chart-3.png";
 
 export function Head() {
