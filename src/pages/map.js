@@ -190,7 +190,7 @@ function filterByWeatherAndDay(data) {
     <Layout>
       <style jsx>{`
         button {
-          background-color: pink;
+          background-color: purple;
           color: white;
           padding: 10px;
           margin: 5px;
