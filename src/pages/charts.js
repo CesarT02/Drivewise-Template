@@ -48,7 +48,7 @@ export default function ChartsPage() {
 `}</style>
         </style>
         <div className="flex flex-wrap justify-center">
-          {[coicture1, picture2, chart3].map((image, index) => (
+          {[Picture1, Picture2, chart3].map((image, index) => (
             <div
               className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4"
               key={index}
