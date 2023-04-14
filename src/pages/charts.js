@@ -68,7 +68,7 @@ export default function ChartsPage() {
                   className="hovered-image"
                 />
               </div>
-              <p className="text-center mt-2">Text under image {index + 1}</p>
+              <p className="text-center mt-2">{chartDescriptions[index]}</p>
             </div>
           ))}
         </div>
