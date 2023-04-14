@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
-import chart1 from "../images/chart1.png";
-import chart2 from "../images/chart-2.png";
+import chart1 from "../images/Picture1.png";
+import chart2 from "../images/Picture2.png";
 import chart3 from "../images/chart-3.png";
 
 export function Head() {
@@ -48,7 +48,7 @@ export default function ChartsPage() {
 `}</style>
         </style>
         <div className="flex flex-wrap justify-center">
-          {[chart1, chart2, chart3].map((image, index) => (
+          {[coicture1, picture2, chart3].map((image, index) => (
             <div
               className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4"
               key={index}
