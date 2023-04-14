@@ -52,8 +52,6 @@ export default function ChartsPage() {
 `}</style>
         </style>
         <div className="flex flex-wrap justify-center">
-          {[picture1, picture2, chart3].map((image, index)
-              <div className="flex flex-wrap justify-center">
           {[picture1, picture2, chart3].map((image, index) => (
             <div
               className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 px-4 mb-4"
@@ -72,7 +70,6 @@ export default function ChartsPage() {
                 />
               </div>
               <p className="text-center mt-2">Text under image {index + 1}</p>
-              <p className="text-justify text-sm mt-2">{chartDescriptions[index]}</p>
             </div>
           ))}
         </div>
