@@ -188,6 +188,21 @@ function filterByWeatherAndDay(data) {
 
   return (
     <Layout>
+      <style jsx>{`
+        button {
+          background-color: pink;
+          color: white;
+          padding: 10px;
+          margin: 5px;
+          border: none;
+          cursor: pointer;
+          transition: 0.3s;
+          border-radius: 5px;
+        }
+        button:hover {
+          background-color: hotpink;
+        }
+      `}</style>
       <button
         id="switch-to-vehicle-collision-data"
         onClick={switchToVehicleCollisionData}
