@@ -72,6 +72,9 @@ export default function MapPage() {
   const mapRef = useRef();
   const [map, setMap] = useState(null);
   const [heatmap, setHeatmap] = useState(null);
+  
+  const [selectedWeather, setSelectedWeather] = useState("");
+  const [selectedTime, setSelectedTime] = useState("");
 
   useEffect(() => {
     const loader = new Loader({
@@ -143,14 +146,15 @@ function filterByWeatherAndDay(data) {
   "DARK-LIGHTED",
   "DARK-NOT LIGHTED",
 ];
-  const weather = data.Weather ? data.Weather.trim() : '';
-  const day = data.Day ? data.Day.trim() : '';
-  const result =
-    allowedWeather.includes(weather) &&
-    allowedDay.includes(day);
-  console.log("WeatherAndDay filter:", data, result);
-  return result;
-}
+   const weather = data.Weather ? data.Weather.trim() : "";
+    const day = data.Day ? data.Day.trim() : "";
+    const result =
+      (selectedWeather === "" || selectedWeather === weather) &&
+      (selectedTime === "" || selectedTime === day);
+    console.log("WeatherAndDay filter:", data, result);
+    return result;
+  }
+
  function switchToVehicleCollisionData() {
   loadHeatmapData(filterByVehicleCollision, [
     [0, 255, 255],
@@ -218,7 +222,26 @@ function filterByWeatherAndDay(data) {
       <button id="switch-to-original-data" onClick={switchToOriginalData}>
         Switch to Original Data
       </button>
+        {/* Add two select elements to choose the weather and time of day */}
+      <select onChange={handleWeatherChange}>
+        <option value="">Select Weather</option>
+        <option value="CLEAR">Clear</option>
+        <option value="CLOUDY">Cloudy</option>
+        <option value="RAIN">Rain</option>
+        <option value="SLEET / HA">Sleet / Hail</option>
+      </select>
+      <select onChange={handleTimeChange}>
+        <option value="">Select Time of Day</option>
+        <option value="DAYLIGHT">Daylight</option>
+        <option value="DARK">Dark</option>
+        <option value="DUSK">Dusk</option>
+        <option value="DAWN">Dawn</option>
+        <option value="DARK-LIGHTED">Dark-Lighted</option>
+        <option value="DARK-NOT LIGHTED">Dark-Not Lighted</option>
+      </select>
+
       <div ref={mapRef} style={mapContainerStyle} />
     </Layout>
   );
 }
+   
