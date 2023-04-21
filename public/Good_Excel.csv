@@ -1,0 +1,600 @@
+﻿StreetName,City,State,Collision,Weather,Day
+2ND ST                        ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+MOUNTAIN                      ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+1ST ST.                       ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+MOUNAIN AVE                   ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+N EUCLID AV                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N EUCLID AV                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+N EUCLID V                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+EUCLID AVE                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N EUCLID AV                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-NOT LIGHTED                                       
+EUCLID AV N                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+EUCLID AV N                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+1ST ST E                      ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+EUCLID AV                     ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DARK-LIGHTED                                           
+N EUCLID AV                   ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+EUCLID AV                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+EUCLID AV                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+1ST ST E                      ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+EUCLID AV                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+EUCLID AV                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+EUCLID AV N                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+EUCLID AV N                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+1ST ST E                      ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+EUCLID AV N                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+4150 E 22ND ST                ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+1616 E 22ND ST                ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+N EUCLID AV                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N EUCLID AV                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+N EUCLID AV                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+N EUCLID AV                   ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+E SPEEDWAY BLVD               ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DARK-LIGHTED                                           
+ALVERNON WY S                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAWN                                                   
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+ALVERNON WY S                 ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DARK-LIGHTED                                           
+29TH ST E                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+29TH ST E                     ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DARK-LIGHTED                                           
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+29TH ST E                     ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+29TH ST E                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DAYLIGHT                                               
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DARK-LIGHTED                                           
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+29TH ST E                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+29TH ST E                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAWN                                                   
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DUSK                                                   
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N MCKINLEY AV                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+MCKINLEY AV N                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+SPEEDWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+MCKINLEY AV N                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DUSK                                                   
+N MCKINLEY                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+SPEEDWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+SPEEDWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAWN                                                   
+SPEEDWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+SPEEDWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+ALVERNON WY S                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+ALVERNON WY S                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+29TH ST E                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+ALVERNON WY S                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+29TH ST E                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+ALVERNON WY S                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+ALVERON WY S                  ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+29TH ST E                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+29TH ST E                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+29TH ST E                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+29TH ST E                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+29TH ST E                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+ALVERNON WY S                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+ALVERNON WY S                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+ALVERNON WY S                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+ALVERNON WY S                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+29TH ST E                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+29TH ST                       ,Tucson,Arizona,Vehicle/Vehicle,UNKNOWN                                                ,DAYLIGHT                                               
+29TH ST                       ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DUSK                                                   
+29TH ST                       ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DARK-LIGHTED                                           
+29TH ST                       ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S ALVERNON WY                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+29TH  ST                      ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+29TH ST                       ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E 29TH ST                     ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DARK-LIGHTED                                           
+W PRINCE RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+N PRINCE RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W PRINCE RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+PRINCE RD                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+PRINCE RD W                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W PRINCE RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+PRINCE RD                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+PRINCE RD W                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W PRINCE RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+PRINCE                        ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W PRINCE RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W PRINCE RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+PRINCE RD W                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S MIDVALE PARK RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+12TH AV                       ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S 12TH AV                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+12TH AV S                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+12TH AV S                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+VETERANS BL W                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+VETERANS BL W                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+12TH AV S                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S 12TH AV                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+12TH AV S                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S 12TH AV                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S 12TH AV                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S 12TH AV                     ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DARK-LIGHTED                                           
+S 12 AVE                      ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DARK-LIGHTED                                           
+S 12 AV                       ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S 12TH AVE                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+S 12TH AV                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S 12TH AV                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S 12TH AV                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+12TH AV                       ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+1440 W IRVINGTON RD           ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+4100 E 29TH ST                ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-NOT LIGHTED                                       
+HERMANS RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAWN                                                   
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E GOLF LINKS RD               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAWN                                                   
+E GOLF LINKS RD               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E GOLF LINKS RD               ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+E GOLF LINKS RD               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BLVD                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S SWAN RD                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+SCARLETT ST                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N SWAN RD                     ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DAYLIGHT                                               
+HELEN ST                      ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E HELEN ST                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+SWAN RD N                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S WILMOT RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+S WILMOT RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+S WILMOT RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+S WILMOT RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W CANADA ST                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DARK-NOT LIGHTED                                       
+DEL MORAL BL                  ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DARK-LIGHTED                                           
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DARK-LIGHTED                                           
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+COUNTRY CLUB RD               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+COUNTRY CLUB RD               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+COUNTRY CLUB RD               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-NOT LIGHTED                                       
+COUNTRY CLUB BL               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+BROADWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DUSK                                                   
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DARK-LIGHTED                                           
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DARK-LIGHTED                                           
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BLVD               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB                  ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E BROADWAY                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BLVD                 ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HAIL (FREEZING RAIN / DRIZZLE)                 ,DARK-LIGHTED                                           
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DUSK                                                   
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W MIRACLE MILE                ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+ORACLE RD                     ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+ORACLE RD                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+ORACLE RD                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+CALLE SANTA CRUZ              ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S CALLE SANTA CRUZ            ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+DREXEL RD                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+CALLE SANTA CRUZ              ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S CALLE SANTA CRUZ            ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+CALLE SANTA CRUZ S            ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+CALLE SANTA CRUZ              ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-NOT LIGHTED                                       
+DREXEL RD                     ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+CALLE SANTA CRUZ              ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W DREXEL RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S CALLE SANTA CRUZ            ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S CALLE SANTA CRUZ            ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W DREXEL RD                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S CALLE SANTA CRUZ            ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-NOT LIGHTED                                       
+E CONGRESS RD                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S SOUTHERN OAK DR             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S SOUTHERN OAK DR             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+OAK HOLLOW DR W               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+4730 E GRANT RD               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DARK-NOT LIGHTED                                       
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DAYLIGHT                                               
+SPEEDWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+SPEEDWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BLVD               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DUSK                                                   
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DUSK                                                   
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+SPEEDWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+SPEEDWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DUSK                                                   
+SPEEDWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAWN                                                   
+SPEEDWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+SPEEDWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+SPEEDWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+SPEEDWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+SPEEDWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DARK-LIGHTED                                           
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+SPEEDWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+SPEEDWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+SPEEDWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+SPEEDWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+COUNTRY CLUB RD               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DARK-LIGHTED                                           
+SPEEDWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+SPEEDWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD               ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+COUNTRY CLUB RD               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N COUNTRY CLUB RD             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E PIMA                        ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E PIMA ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E PIMA ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+E PIMA ST                     ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+COUNTRY CLUB RD N             ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+1133 E. JAMES E ROGERS WAY    ,Tucson,Arizona,Vehicle/Vehicle,UNKNOWN                                                ,DARK-UNKNOWN LIGHTING                                  
+JAMES E ROGERS                ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N COLUMBUS BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-NOT LIGHTED                                       
+N COLUMBUS BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+1350 E BROADWAY BL            ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+SOUTH CAMPUS DR.              ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+AJO WY                        ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+FAIRVIEW AV N                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD                      ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD                      ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DUSK                                                   
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD                      ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD                      ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+FAIRVIEW AV N                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD                      ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DAYLIGHT                                               
+GRANT RD                      ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD                      ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD                      ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DUSK                                                   
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD                      ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N FAIRVIEW AV                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+FAIRVIEW AV N                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DUSK                                                   
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+N FAIRVIEW AV                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DUSK                                                   
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAWN                                                   
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DAYLIGHT                                               
+N FAIRVIEW AV                 ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HAIL (FREEZING RAIN / DRIZZLE)                 ,DAYLIGHT                                               
+GRANT RD W                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N FAIRVIEW AV                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+W GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+FAIRVIEW AV                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+FAIRVIEW AV N                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E IRVINGTON RD                ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+CAMPBELL AV                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+W STARR PASS BL               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+S STARR PASS BL               ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+W STARR PASS BL               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+1100 S ALVERNON WY            ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E GRANT RD                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N STONE AV                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N STONE AV                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E ALAMEDA ST                  ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N STONE AV                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E ALAMEDA ST                  ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+ALAMEDA ST E                  ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+STONE AV N                    ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+E ALAMEDA ST                  ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+STONE AV N                    ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+ALAMEDA ST E                  ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E ALAMEDA ST                  ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+ALAMEDA ST E                  ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+ALAMEDA ST E                  ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+ALAMEDA ST E                  ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+PANTANO RD N                  ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N PANTANO RD                  ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-NOT LIGHTED                                       
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N ROSEMONT BL                 ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DARK-LIGHTED                                           
+E BROADWAY                    ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N ROSEMONT BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,UNKNOWN                                                ,DARK-UNKNOWN LIGHTING                                  
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-NOT LIGHTED                                       
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DARK-LIGHTED                                           
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLOUDY                                                 ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+BROADWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+ROSEMONT BL                   ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E BROADWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+1ST AV N                      ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+1701 E SPEEDWAY BL            ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N CAMPBELL AV                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+SAN MARCOS BL W               ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N PANTANO RD                  ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DARK-LIGHTED                                           
+N PANTANO RD                  ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DARK-LIGHTED                                           
+PANTANO RD N                  ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+SPEEDWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+N PANTANO RD                  ,Tucson,Arizona,Vehicle/Vehicle,UNKNOWN                                                ,DARK-LIGHTED                                           
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+PANTANO RD N                  ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+E SPEEDWAY BL                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DAYLIGHT                                               
+SPEEDWAY BL E                 ,Tucson,Arizona,Vehicle/Vehicle,CLEAR                                                  ,DARK-LIGHTED                                           
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N ORACLE RD                   ,Tucson,Arizona,Vehicle/Vehicle,RAIN                                                   ,DUSK                                                   
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
+N STONE AVE                    ,Tucson,Arizona,Vehicle/Vehicle,SLEET / HA               ,DAYLIGHT                                               
