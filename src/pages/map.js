@@ -46,7 +46,7 @@ async function parseAndGeocodeExcel(excelArrayBuffer, apiKey, filterFunction) {
   const filteredRows = nonEmptyRows.filter(filterFunction);
   const coordinates = [];
 
-    for (const row of filteredRows) {
+  for (const row of filteredRows) {
     try {
       const latLng = await getLatLngFromStreetName(row.StreetName, row.City, row.State, apiKey);
       coordinates.push(latLng);
@@ -86,7 +86,7 @@ export default function MapPage() {
     loader.load().then(() => {
       const loadedMap = new google.maps.Map(mapRef.current, {
         zoom: 13,
-        center: { lat: 32.248814, lng: -110.987419 },
+        center: {         lat: 32.248814, lng: -110.987419 },
         mapTypeId: "satellite",
       });
 
@@ -94,80 +94,62 @@ export default function MapPage() {
     });
   }, []);
 
-async function loadHeatmapData(filterFunction) {
-  const excelResponse = await fetch("/Good_Excel.xlsx");
-  const excelBlob = await excelResponse.blob();
+  async function loadHeatmapData(filterFunction) {
+    const excelResponse = await fetch("/Good_Excel.xlsx");
+    const excelBlob = await excelResponse.blob();
 
-  const excelArrayBuffer = await new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onloadend = () => resolve(reader.result);
-    reader.onerror = reject;
-    reader.readAsArrayBuffer(excelBlob);
-  });
+    const excelArrayBuffer = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsArrayBuffer(excelBlob);
+    });
 
-  const coordinates = await parseAndGeocodeExcel(
-    excelArrayBuffer,
-    apiKey,
-    filterFunction
-  );
+    const coordinates = await parseAndGeocodeExcel(
+      excelArrayBuffer,
+      apiKey,
+      filterFunction
+    );
 
-  if (heatmap) {
-    heatmap.setMap(null);
+    if (heatmap) {
+      heatmap.setMap(null);
+    }
+
+    const newHeatmap = new google.maps.visualization.HeatmapLayer({
+      data: coordinates,
+      map,
+      radius: 20,
+      opacity: 0.7,
+      gradient: createCustomGradient([
+        [0, 255, 255],
+        [0, 191, 255],
+        [0, 127, 255],
+      ]),
+    });
+
+    setHeatmap(newHeatmap);
   }
 
-  // Choose gradient colors based on the selected options
-  let gradientColors;
-  if (selectedWeather !== "" && selectedTime !== "") {
-    gradientColors = [
-      [255, 0, 255], // Magenta
-      [191, 0, 191],
-      [127, 0, 127],
-    ];
-  } else if (selectedWeather !== "") {
-    gradientColors = [
-      [0, 255, 255], // Cyan
-      [0, 191, 191],
-      [0, 127, 127],
-    ];
-  } else if (selectedTime !== "") {
-    gradientColors = [
-      [255, 255, 0], // Yellow
-      [191, 191, 0],
-      [127, 127, 0],
-    ];
+  function filterByVehicleCollision(data) {
+    const allowedTypes = ["Vehicle/Vehicle"];
+    const vehicleCollisionData = data.Collision || "";
+
+    const result = allowedTypes.includes(vehicleCollisionData.trim());
+    console.log("VehicleCollision filter:", data, result);
+    return result;
   }
 
-  const newHeatmap = new google.maps.visualization.HeatmapLayer({
-    data: coordinates,
-    map,
-    radius: 20,
-    opacity: 0.7,
-    gradient: gradientColors ? createCustomGradient(gradientColors) : null,
-  });
-
-  setHeatmap(newHeatmap);
-}
-
-function filterByVehicleCollision(data) {
-  const allowedTypes = ["Vehicle/Vehicle"];
-  const vehicleCollisionData = data.Collision || "";
-
-  const result = allowedTypes.includes(vehicleCollisionData.trim());
-  console.log("VehicleCollision filter:", data, result);
-  return result;
-}
-
-function filterByWeatherAndDay(data) {
-  const allowedWeather = ["CLEAR", "CLOUDY", "RAIN", "SLEET / HA"];
-  const allowedDay = [
-  "DAYLIGHT",
-  "DARK",
-  "DUSK",
-  "DAWN",
-  "DARK-LIGHTED",
-  "DARK-NOT LIGHTED",
-];
-   const weather = data.Weather ? data.Weather.trim() : "";
+  function filterByWeatherAndDay(data) {
+    const allowedWeather = ["CLEAR", "CLOUDY", "RAIN", "SLEET / HA"];
+    const allowedDay = [
+      "DAYLIGHT",
+      "DARK",
+      "DUSK",
+      "DAWN",
+      "DARK-LIGHTED",
+      "DARK-NOT LIGHTED",
+    ];
+    const weather = data.Weather ? data.Weather.trim() : "";
     const day = data.Day ? data.Day.trim() : "";
     const result =
       (selectedWeather === "" || selectedWeather === weather) &&
@@ -176,43 +158,13 @@ function filterByWeatherAndDay(data) {
     return result;
   }
 
- function switchToVehicleCollisionData() {
-  loadHeatmapData(filterByVehicleCollision, [
-    [0, 255, 255],
-    [0, 191, 255],
-    [0, 127, 255],
-    [0, 63, 255],
-    [0, 0, 255],
-    [0, 0, 223],
-    [0, 0, 191],
-    [0, 0, 159],
-    [0, 0, 127],
-   ]).then(coordinates => {
-    console.log('VehicleCollision coordinates:', coordinates);
-  });
-}
-
-  function switchToWeatherAndDayData() {
-    loadHeatmapData(filterByWeatherAndDay, [
-      [255, 255, 0],
-      [255, 191, 0],
-      [255, 127, 0],
-      [255, 63, 0],
-      [255, 0, 0],
-      [223, 0, 0],
-      [191, 0, 0],
-      [159, 0, 0],
-      [127, 0, 0],
-    ]).then(coordinates => {
-    console.log('WeatherAndDay coordinates:', coordinates);
-  });
-}
-  function switchToOriginalData() {
-    loadHeatmapData(() => true); // Pass a function that always returns true to include all data points
+  function switchToVehicleCollisionData() {
+    loadHeatmapData(filterByVehicleCollision).then(coordinates => {
+      console.log('VehicleCollision coordinates:', coordinates);
+    });
   }
-  
-  
-    function handleWeatherChange(event) {
+
+  function handleWeatherChange(event) {
     setSelectedWeather(event.target.value);
     loadHeatmapData(filterByWeatherAndDay);
   }
@@ -222,69 +174,66 @@ function filterByWeatherAndDay(data) {
     loadHeatmapData(filterByWeatherAndDay);
   }
 
-return (
-  <Layout>
-    <style jsx>{`
-      button, select {
-        background-color: purple;
-        color: white;
-        padding: 10px;
-        margin: 5px;
-        border: none;
-        cursor: pointer;
-        transition: 0.3s;
-        border-radius: 5px;
-      }
-      button:hover {
-        background-color: hotpink;
-      }
-      select {
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        background-color: purple;
-        background-image: linear-gradient(45deg, transparent 50%, white 50%),
-                          linear-gradient(-45deg, transparent 50%, white 50%);
-        background-position: calc(100% - 20px) center, calc(100% - 15px) center;
-        background-size: 5px 5px, 5px 5px;
-        background-repeat: no-repeat;
-      }
-    `}</style>
-    <button
-      id="switch-to-vehicle-collision-data"
-      onClick={switchToVehicleCollisionData}
-    >
-      Switch to Vehicle Collision Data
-    </button>
-    <button
-      id="switch-to-weather-and-day-data"
-      onClick={switchToWeatherAndDayData}
-    >
-      Switch to Weather and Day Data
-    </button>
-    <button id="switch-to-original-data" onClick={switchToOriginalData}>
-      Switch to Original Data
-    </button>
-    {/* Add two select elements to choose the weather and time of day */}
-    <select onChange={handleWeatherChange}>
-      <option value="">Select Weather</option>
-      <option value="CLEAR">Clear</option>
-      <option value="CLOUDY">Cloudy</option>
-      <option value="RAIN">Rain</option>
-      <option value="SLEET / HA">Sleet / Hail</option>
-    </select>
-    <select onChange={handleTimeChange}>
-      <option value="">Select Time of Day</option>
-      <option value="DAYLIGHT">Daylight</option>
-      <option value="DARK">Dark</option>
-      <option value="DUSK">Dusk</option>
-      <option value="DAWN">Dawn</option>
-      <option value="DARK-LIGHTED">Dark-Lighted</option>
-      <option value="DARK-NOT LIGHTED">Dark-Not Lighted</option>
-    </select>
+  return (
+    <Layout>
+      <style jsx>{`
+        button, select {
+          background-color: purple;
+          color: white;
+          padding: 10px;
+          margin: 5px;
+          border: none;
+          cursor: pointer;
+          transition: 0.3s;
+          border-radius: 5px;
+        }
+        button:hover {
+          background-color: hotpink;
+        }
+        select {
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background-color: purple;
+          background-image: linear-gradient(45deg, transparent 50%, white 50%),
+                            linear-gradient(-45deg, transparent 50%, white 50%);
+          background-position: calc(100% - 20px) center, calc(100% - 15px) center;
+                    background-size: 5px 5px, 5px 5px;
+          background-repeat: no-repeat;
+        }
+      `}</style>
+      <button
+        id="switch-to-vehicle-collision-data"
+        onClick={switchToVehicleCollisionData}
+      >
+        Switch to Vehicle Collision Data
+      </button>
+      
+      <button id="switch-to-original-data" onClick={switchToOriginalData}>
+        Switch to Original Data
+      </button>
+      {/* Add two select elements to choose the weather and time of day */}
+      <select onChange={handleWeatherChange}>
+        <option value="">Select Weather</option>
+        <option value="CLEAR">Clear</option>
+        <option value="CLOUDY">Cloudy</option>
+        <option value="RAIN">Rain</option>
+        <option value="SLEET / HA">Sleet / Hail</option>
+      </select>
+      <select onChange={handleTimeChange}>
+        <option value="">Select Time of Day</option>
+        <option value="DAYLIGHT">Daylight</option>
+        <option value="DARK">Dark</option>
+        <option value="DUSK">Dusk</option>
+        <option value="DAWN">Dawn</option>
+        <option value="DARK-LIGHTED">Dark-Lighted</option>
+        <option value="DARK-NOT LIGHTED">Dark-Not Lighted</option>
+      </select>
 
-    <div ref={mapRef} style={mapContainerStyle} />
-  </Layout>
+      <div ref={mapRef} style={mapContainerStyle} />
+    </Layout>
   );
 }
-   
+
+
+
