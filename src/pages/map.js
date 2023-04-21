@@ -54,7 +54,7 @@ async function parseAndGeocodeExcel(excelArrayBuffer, apiKey, filterFunction) {
     } catch (error) {
       console.error(`Failed to geocode street name "${row.StreetName}":`, error);
     }
-    await sleep(200); // Adjust the sleep time as needed (in milliseconds)
+    await sleep(100); // Adjust the sleep time as needed (in milliseconds)
   }
   console.log(coordinates);
 
