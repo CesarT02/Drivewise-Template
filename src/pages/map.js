@@ -200,58 +200,69 @@ function filterByWeatherAndDay(data) {
     loadHeatmapData(filterByWeatherAndDay);
   }
 
-  return (
-    <Layout>
-      <style jsx>{`
-        button {
-          background-color: purple;
-          color: white;
-          padding: 10px;
-          margin: 5px;
-          border: none;
-          cursor: pointer;
-          transition: 0.3s;
-          border-radius: 5px;
-        }
-        button:hover {
-          background-color: hotpink;
-        }
-      `}</style>
-      <button
-        id="switch-to-vehicle-collision-data"
-        onClick={switchToVehicleCollisionData}
-      >
-        Switch to Vehicle Collision Data
-      </button>
-      <button
-        id="switch-to-weather-and-day-data"
-        onClick={switchToWeatherAndDayData}
-      >
-        Switch to Weather and Day Data
-      </button>
-      <button id="switch-to-original-data" onClick={switchToOriginalData}>
-        Switch to Original Data
-      </button>
-        {/* Add two select elements to choose the weather and time of day */}
-      <select onChange={handleWeatherChange}>
-        <option value="">Select Weather</option>
-        <option value="CLEAR">Clear</option>
-        <option value="CLOUDY">Cloudy</option>
-        <option value="RAIN">Rain</option>
-        <option value="SLEET / HA">Sleet / Hail</option>
-      </select>
-      <select onChange={handleTimeChange}>
-        <option value="">Select Time of Day</option>
-        <option value="DAYLIGHT">Daylight</option>
-        <option value="DARK">Dark</option>
-        <option value="DUSK">Dusk</option>
-        <option value="DAWN">Dawn</option>
-        <option value="DARK-LIGHTED">Dark-Lighted</option>
-        <option value="DARK-NOT LIGHTED">Dark-Not Lighted</option>
-      </select>
+return (
+  <Layout>
+    <style jsx>{`
+      button, select {
+        background-color: purple;
+        color: white;
+        padding: 10px;
+        margin: 5px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: hotpink;
+      }
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: purple;
+        background-image: linear-gradient(45deg, transparent 50%, white 50%),
+                          linear-gradient(-45deg, transparent 50%, white 50%);
+        background-position: calc(100% - 20px) center, calc(100% - 15px) center;
+        background-size: 5px 5px, 5px 5px;
+        background-repeat: no-repeat;
+      }
+    `}</style>
+    <button
+      id="switch-to-vehicle-collision-data"
+      onClick={switchToVehicleCollisionData}
+    >
+      Switch to Vehicle Collision Data
+    </button>
+    <button
+      id="switch-to-weather-and-day-data"
+      onClick={switchToWeatherAndDayData}
+    >
+      Switch to Weather and Day Data
+    </button>
+    <button id="switch-to-original-data" onClick={switchToOriginalData}>
+      Switch to Original Data
+    </button>
+    {/* Add two select elements to choose the weather and time of day */}
+    <select onChange={handleWeatherChange}>
+      <option value="">Select Weather</option>
+      <option value="CLEAR">Clear</option>
+      <option value="CLOUDY">Cloudy</option>
+      <option value="RAIN">Rain</option>
+      <option value="SLEET / HA">Sleet / Hail</option>
+    </select>
+    <select onChange={handleTimeChange}>
+      <option value="">Select Time of Day</option>
+      <option value="DAYLIGHT">Daylight</option>
+      <option value="DARK">Dark</option>
+      <option value="DUSK">Dusk</option>
+      <option value="DAWN">Dawn</option>
+      <option value="DARK-LIGHTED">Dark-Lighted</option>
+      <option value="DARK-NOT LIGHTED">Dark-Not Lighted</option>
+    </select>
 
-      <div ref={mapRef} style={mapContainerStyle} />
-    </Layout>
+    <div ref={mapRef} style={mapContainerStyle} />
+  </Layout>
   );
 }
    
