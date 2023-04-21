@@ -94,7 +94,7 @@ export default function MapPage() {
     });
   }, []);
 
-async function loadHeatmapData(filterFunction, gradientColors) {
+async function loadHeatmapData(filterFunction) {
   const excelResponse = await fetch("/Good_Excel.xlsx");
   const excelBlob = await excelResponse.blob();
 
@@ -113,6 +113,28 @@ async function loadHeatmapData(filterFunction, gradientColors) {
 
   if (heatmap) {
     heatmap.setMap(null);
+  }
+
+  // Choose gradient colors based on the selected options
+  let gradientColors;
+  if (selectedWeather !== "" && selectedTime !== "") {
+    gradientColors = [
+      [255, 0, 255], // Magenta
+      [191, 0, 191],
+      [127, 0, 127],
+    ];
+  } else if (selectedWeather !== "") {
+    gradientColors = [
+      [0, 255, 255], // Cyan
+      [0, 191, 191],
+      [0, 127, 127],
+    ];
+  } else if (selectedTime !== "") {
+    gradientColors = [
+      [255, 255, 0], // Yellow
+      [191, 191, 0],
+      [127, 127, 0],
+    ];
   }
 
   const newHeatmap = new google.maps.visualization.HeatmapLayer({
