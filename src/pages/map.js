@@ -116,13 +116,12 @@ async function loadHeatmapData(filterFunction, gradientColors) {
   }
 
   const newHeatmap = new google.maps.visualization.HeatmapLayer({
-   data: coordinates,
-   map,
-   radius: 20,
-   opacity: 0.7,
-   gradient: gradientColors ? createCustomGradient(gradientColors) : null,
- });
-  console.log(coordinates);
+    data: coordinates,
+    map,
+    radius: 20,
+    opacity: 0.7,
+    gradient: gradientColors ? createCustomGradient(gradientColors) : null,
+  });
 
   setHeatmap(newHeatmap);
 }
@@ -188,6 +187,17 @@ function filterByWeatherAndDay(data) {
 }
   function switchToOriginalData() {
     loadHeatmapData(() => true); // Pass a function that always returns true to include all data points
+  }
+  
+  
+    function handleWeatherChange(event) {
+    setSelectedWeather(event.target.value);
+    loadHeatmapData(filterByWeatherAndDay);
+  }
+
+  function handleTimeChange(event) {
+    setSelectedTime(event.target.value);
+    loadHeatmapData(filterByWeatherAndDay);
   }
 
   return (
