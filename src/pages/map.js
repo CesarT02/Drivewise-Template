@@ -5,7 +5,7 @@ import * as XLSX from 'xlsx';
 
 const mapContainerStyle = {
   width: "90%",
-  height: "65vh",
+  height: "70vh",
 };
 
 function sleep(ms) {
@@ -268,7 +268,6 @@ return (
     </select>
 
     <div ref={mapRef} style={mapContainerStyle} />
-
   </Layout>
   );
 }
