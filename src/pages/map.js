@@ -199,6 +199,10 @@ function filterByWeatherAndDay(data) {
     setSelectedTime(event.target.value);
     loadHeatmapData(filterByWeatherAndDay);
   }
+  function handleCollisionChange(event) {
+    setSelectedCollision(event.target.value);
+    loadHeatmapData(filterByVehicleCollision);
+  }
 
 return (
   <Layout>
