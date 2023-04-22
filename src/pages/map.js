@@ -4,8 +4,8 @@ import { Loader } from "@googlemaps/js-api-loader";
 import * as XLSX from 'xlsx';
 
 const mapContainerStyle = {
-  width: "100%",
-  height: "60vh",
+  width: "90%",
+  height: "65vh",
 };
 
 function sleep(ms) {
@@ -259,15 +259,16 @@ return (
     </select>
     <select onChange={handleTimeChange}>
       <option value="">Select Time of Day</option>
-      <option value="DAYLIGHT">Daylight</option>
-      <option value="DARK">Dark</option>
-      <option value="DUSK">Dusk</option>
-      <option value="DAWN">Dawn</option>
-      <option value="DARK-LIGHTED">Dark-Lighted</option>
-      <option value="DARK-NOT LIGHTED">Dark-Not Lighted</option>
+      <option value="DAYLIGHT(6AM-6PM)">Daylight</option>
+      <option value="DARK(8PM-4AM)">Dark</option>
+      <option value="DUSK(6PM-8PM)">Dusk</option>
+      <option value="DAWN(4AM-6AM)">Dawn</option>
+      <option value="DARK-LIGHTED( 8PM to 10PM)">Dark-Lighted</option>
+      <option value="DARK-NOT LIGHTED(10PM to 4AM)">Dark-Not Lighted</option>
     </select>
 
     <div ref={mapRef} style={mapContainerStyle} />
+
   </Layout>
   );
 }
