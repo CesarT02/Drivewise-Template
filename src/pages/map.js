@@ -5,7 +5,7 @@ import * as XLSX from 'xlsx';
 
 const mapContainerStyle = {
   width: "100%",
-  height: "100vh",
+  height: "75vh",
 };
 
 function sleep(ms) {
