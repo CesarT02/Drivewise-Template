@@ -4,8 +4,8 @@ import { Loader } from "@googlemaps/js-api-loader";
 import * as XLSX from 'xlsx';
 
 const mapContainerStyle = {
-  width: "100%",
-  height: "60vh",
+  width: "85%",
+  height: "70vh",
 };
 
 function sleep(ms) {
@@ -266,8 +266,16 @@ return (
       <option value="DARK-LIGHTED">Dark-Lighted</option>
       <option value="DARK-NOT LIGHTED">Dark-Not Lighted</option>
     </select>
-
+    
     <div ref={mapRef} style={mapContainerStyle} />
+    <div style="text-align: center;">
+  <p>Above is our Traffic incident danger visualizer, The map functions by Reading in a data set containing traffic incidents reported all across Tucson From the Tucson Police Department. </p>
+
+  <p>To use: Firstly, Click on one of the "Switch to" data set buttons, Please note there is a long delay when compiling the data, once the data is compiled it will display on the map and you can select from each of their respective filters and the map will filter out ones that don't match the parameters.</p>
+
+  <p>The spots that pop up are essentially the "problem" areas the darker the center of the heatmap means there is a larger concentration there.</p>
+</div>
+
   </Layout>
   );
 }
