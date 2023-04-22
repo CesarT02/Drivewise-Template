@@ -127,7 +127,7 @@ async function loadHeatmapData(filterFunction, gradientColors) {
 }
 
 function filterByVehicleCollision(data) {
-  const allowedTypes = ["Vehicle/Vehicle"];
+  const allowedTypes = ["Vehicle/Vehicle", "Vehicle/Pedestrian"];
   const vehicleCollisionData = data.Collision || "";
 
   const result = allowedTypes.includes(vehicleCollisionData.trim());
@@ -235,6 +235,12 @@ return (
       Switch to Vehicle Collision Data
    
     </button>
+    <select onChange={handleCollisionChange}>
+      <option value="">Select Filter</option>
+      <option value="Vehicles">Vehicle/Vehicle</option>
+      <option value="pedestrians">Vehicle/Pedestrian</option>
+    </select>
+
     <button id="switch-to-original-data" onClick={switchToOriginalData}>
       Switch to Original Data
     </button>
