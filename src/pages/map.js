@@ -75,6 +75,7 @@ export default function MapPage() {
   
   const [selectedWeather, setSelectedWeather] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
+  const [selectedCollision, setSelectedCollision] = useState("");
 
   useEffect(() => {
     const loader = new Loader({
